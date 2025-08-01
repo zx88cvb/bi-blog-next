@@ -1,4 +1,4 @@
-import { ExternalLink, Users, Heart, Globe, Mail } from 'lucide-react'
+import { ExternalLink, Users, Globe } from 'lucide-react'
 import { getFriendsData } from '@/lib/data'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
