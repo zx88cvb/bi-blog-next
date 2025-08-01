@@ -1,0 +1,39 @@
+{
+  "friends": [
+    {
+      "id": "1",
+      "name": "Google",
+      "url": "https://www.google.com/",
+      "description": "我来占个位置",
+      "avatar": "/images/friends/zhangsan.jpg",
+      "status": "active",
+      "tags": ["Google"],
+      "addedDate": "2025-07-10"
+    }
+  ],
+  "statistics": {
+    "totalFriends": 6,
+    "activeFriends": 6,
+    "inactiveFriends": 0,
+    "categories": 7
+  },
+  "settings": {
+    "displayMode": "grid",
+    "sortBy": "addedDate",
+    "showStatus": true,
+    "showTags": true,
+    "showDescription": true
+  },
+  "applicationInfo": {
+    "title": "友情链接申请",
+    "description": "欢迎技术博主申请友情链接，一起交流学习！",
+    "requirements": [
+      "技术相关的个人博客或网站",
+      "内容原创，更新频率较好",
+      "网站访问正常，加载速度良好",
+      "内容健康向上，无违法违规信息"
+    ],
+    "applicationMethod": "请通过邮件联系：zx88cvb@gmail.com",
+    "responseTime": "一般会在3-5个工作日内回复"
+  }
+}

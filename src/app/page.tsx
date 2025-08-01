@@ -1,103 +1,117 @@
-import Image from "next/image";
+import Link from 'next/link'
+import { ArrowRight, Calendar, Tag } from 'lucide-react'
+import { getAllPosts } from '@/lib/posts'
+import { formatDate } from '@/lib/utils'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Separator } from '@/components/ui/separator'
+import { TypewriterText } from '@/components/typewriter-text'
 
-export default function Home() {
+export default async function Home() {
+  // 获取最新的3篇文章
+  const allPosts = await getAllPosts()
+  const recentPosts = allPosts.slice(0, 3).map(post => ({
+    id: post.slug,
+    title: post.title,
+    excerpt: post.excerpt,
+    publishDate: post.date,
+    readTime: `${Math.floor(Math.random() * 10) + 5} 分钟`, // 临时计算
+    tags: post.tags,
+    slug: post.slug,
+  }))
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/20 py-16 lg:py-20">
+        <div className="absolute inset-0 bg-grid-black/[0.02] dark:bg-grid-white/[0.02]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
+        
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="animate-fade-in">
+              <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl mb-6">
+                欢迎来到我的
+                <span className="text-primary"> 个人博客</span>
+              </h1>
+              <p className="text-lg leading-8 text-muted-foreground max-w-2xl mx-auto min-h-[3rem]">
+                <TypewriterText text="我是一名充满热情的全栈开发工程师，致力于通过技术创造美好的数字体验。在这里，我分享我的技术探索、项目实践和对编程世界的思考。" />
+              </p>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Recent Posts Section */}
+      <section className="py-24 lg:py-32">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              最新文章
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              探索我最新的技术思考和实践经验
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto space-y-6">
+            {recentPosts.map((post, index) => (
+              <Card 
+                key={post.id} 
+                className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <CardHeader className="pb-4">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
+                    <Calendar className="h-4 w-4" />
+                    {formatDate(post.publishDate)}
+                    <Separator orientation="vertical" className="h-4" />
+                    <span>{post.readTime}</span>
+                  </div>
+                  
+                  <CardTitle className="text-2xl line-clamp-2 group-hover:text-primary transition-colors">
+                    <Link href={`/posts/${post.slug}`}>
+                      {post.title}
+                    </Link>
+                  </CardTitle>
+                </CardHeader>
+                
+                <CardContent className="pt-0">
+                  <CardDescription className="line-clamp-3 mb-4 text-base">
+                    {post.excerpt}
+                  </CardDescription>
+                  
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {post.tags.slice(0, 3).map((tag) => (
+                      <Badge key={tag} variant="secondary" className="text-xs">
+                        <Tag className="h-3 w-3 mr-1" />
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                  
+                  <Button variant="link" size="sm" className="p-0 h-auto" asChild>
+                    <Link href={`/posts/${post.slug}`}>
+                      阅读全文
+                      <ArrowRight className="ml-1 h-3 w-3" />
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          
+          <div className="text-center mt-16">
+            <Button variant="outline" size="lg" asChild>
+              <Link href="/posts">
+                查看所有文章
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
     </div>
-  );
+  )
 }

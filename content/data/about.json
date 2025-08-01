@@ -1,0 +1,17 @@
+{
+  "profile": {
+    "name": "Bi",
+    "title": "全栈开发工程师",
+    "location": "中国",
+    "email": "zx88cvb@gmail.com",
+    "avatar": "/images/avatar.jpg",
+    "bio": "热爱技术，专注于Web开发和用户体验设计。喜欢探索新技术，分享技术见解。",
+    "description": "我是一名热爱技术的全栈开发工程师，专注于现代Web开发技术栈。拥有多年的前端和后端开发经验"
+  },
+  "contact": {
+    "github": "https://github.com/zx88cvb",
+    "twitter": "https://x.com/HaydenBi",
+    "linkedin": "",
+    "email": "zx88cvb@gmail.com"
+  }
+}

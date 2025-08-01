@@ -1,0 +1,49 @@
+{
+  "milestones": [
+    {
+      "id": "1",
+      "date": "2025-07-10",
+      "title": "博客项目启动",
+      "description": "开始构建个人博客",
+      "type": "project",
+      "icon": "🚀",
+      "details": [
+        "完成项目初始化和基础架构搭建",
+        "实现响应式设计和暗色模式",
+        "集成Markdown文章管理系统"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "type": "project",
+      "name": "项目",
+      "color": "#0ea5e9",
+      "description": "完成的重要项目"
+    },
+    {
+      "type": "learning",
+      "name": "学习",
+      "color": "#10b981",
+      "description": "技术学习成果"
+    },
+    {
+      "type": "career",
+      "name": "职业",
+      "color": "#f59e0b",
+      "description": "职业发展里程碑"
+    },
+    {
+      "type": "contribution",
+      "name": "贡献",
+      "color": "#8b5cf6",
+      "description": "开源贡献"
+    },
+    {
+      "type": "presentation",
+      "name": "分享",
+      "color": "#ef4444",
+      "description": "技术分享和演讲"
+    }
+  ]
+}
