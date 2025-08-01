@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Moon, Sun, Menu, X } from 'lucide-react'
 import { useState } from 'react'
@@ -39,9 +40,18 @@ export default function Header() {
           <div className="flex-shrink-0">
             <Link 
               href="/" 
-              className="text-2xl font-bold text-foreground hover:text-primary transition-colors"
+              className="flex items-center gap-2 hover:opacity-80 transition-opacity"
             >
-              Bi Blog
+              <Image
+                src="/logo.png"
+                alt="Bi Blog Logo"
+                width={32}
+                height={32}
+                className="w-8 h-8"
+              />
+              <span className="text-xl font-bold text-foreground">
+                Blog
+              </span>
             </Link>
           </div>
 

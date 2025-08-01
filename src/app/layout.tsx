@@ -3,6 +3,8 @@ import "./globals.css";
 import "../styles/prism.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+// 网站访客分析
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
   title: "Bi Blog - 个人博客",
@@ -11,6 +13,11 @@ export const metadata: Metadata = {
   authors: [{ name: "Bi" }],
   creator: "Bi",
   publisher: "Bi",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
   formatDetection: {
     email: false,
     address: false,
@@ -31,6 +38,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
