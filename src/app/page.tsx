@@ -70,7 +70,7 @@ export default async function Home() {
                     <span>{post.readTime}</span>
                   </div>
                   
-                  <CardTitle className="text-2xl line-clamp-2 group-hover:text-primary transition-colors">
+                  <CardTitle className="text-2xl line-clamp-2 leading-relaxed group-hover:text-primary transition-colors">
                     <Link href={`/posts/${post.slug}`}>
                       {post.title}
                     </Link>
