@@ -1,5 +1,5 @@
 import { Feed } from 'feed'
-import { getAllPosts } from './posts'
+import { getAllPostsForRss } from './posts'
 
 export interface RSSConfig {
   title: string
@@ -47,7 +47,7 @@ export async function generateRSSFeed(config: Partial<RSSConfig> = {}): Promise<
   })
 
   try {
-    const posts = await getAllPosts()
+    const posts = await getAllPostsForRss()
     
     posts.forEach((post) => {
       feed.addItem({
@@ -55,7 +55,7 @@ export async function generateRSSFeed(config: Partial<RSSConfig> = {}): Promise<
         id: `${finalConfig.site_url}/posts/${post.slug}`,
         link: `${finalConfig.site_url}/posts/${post.slug}`,
         description: post.excerpt,
-        content: post.excerpt,
+        content: post.content,
         author: [
           {
             name: post.author,

@@ -53,6 +53,50 @@ export async function getAllPosts(): Promise<PostData[]> {
   })
 }
 
+export async function getAllPostsForRss(): Promise<PostData[]> {
+  if (!fs.existsSync(postsDirectory)) {
+    return []
+  }
+
+  const fileNames = fs.readdirSync(postsDirectory)
+  const allPostsData = await Promise.all(fileNames
+    .filter(fileName => fileName.endsWith('.md'))
+    .map((fileName) => {
+      return (async () => {
+        const slug = fileName.replace(/\.md$/, '')
+        const fullPath = path.join(postsDirectory, fileName)
+        const fileContents = fs.readFileSync(fullPath, 'utf8')
+        const matterResult = matter(fileContents)
+        const processedContent = await unified()
+        .use(remarkParse)
+        .use(remarkGfm)
+        .use(remarkRehype)
+        .use(rehypePrismPlus, {
+          ignoreMissing: true,
+        })
+        .use(rehypeStringify)
+        .process(matterResult.content)
+        const contentHtml = processedContent.toString()
+  
+        return {
+          slug,
+          title: matterResult.data.title || '',
+          date: matterResult.data.date || new Date().toISOString().split('T')[0],
+          excerpt: matterResult.data.excerpt || '',
+          tags: matterResult.data.tags || [],
+          author: matterResult.data.author || '',
+          content: contentHtml,
+        }
+      })();
+    }))
+
+  return allPostsData.sort((a, b) => {
+    const dateA = new Date(a.date)
+    const dateB = new Date(b.date)
+    return dateB.getTime() - dateA.getTime()
+  })
+}
+
 export async function getPostBySlug(slug: string): Promise<PostData | null> {
   try {
     const fullPath = path.join(postsDirectory, `${slug}.md`)
