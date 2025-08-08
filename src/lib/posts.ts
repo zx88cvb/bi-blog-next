@@ -9,6 +9,7 @@ import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import rehypeStringify from 'rehype-stringify'
 import rehypePrismPlus from 'rehype-prism-plus'
+import rehypeRaw from 'rehype-raw'
 
 const postsDirectory = path.join(process.cwd(), 'content/posts')
 
@@ -70,7 +71,8 @@ export async function getAllPostsForRss(): Promise<PostData[]> {
         const processedContent = await unified()
         .use(remarkParse)
         .use(remarkGfm)
-        .use(remarkRehype)
+        .use(remarkRehype, { allowDangerousHtml: true })
+        .use(rehypeRaw)
         .use(rehypePrismPlus, {
           ignoreMissing: true,
         })
@@ -106,7 +108,8 @@ export async function getPostBySlug(slug: string): Promise<PostData | null> {
     const processedContent = await unified()
       .use(remarkParse)
       .use(remarkGfm)
-      .use(remarkRehype)
+      .use(remarkRehype, { allowDangerousHtml: true })
+      .use(rehypeRaw)
       .use(rehypePrismPlus, {
         ignoreMissing: true,
       })
