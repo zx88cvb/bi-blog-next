@@ -23,6 +23,16 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  alternates: {
+    types: {
+      'application/rss+xml': [
+        {
+          title: 'Bi Blog RSS Feed',
+          url: '/api/rss',
+        },
+      ],
+    },
+  },
 };
 
 export default function RootLayout({

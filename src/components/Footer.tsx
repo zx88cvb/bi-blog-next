@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Github, Twitter, Mail, Heart } from 'lucide-react'
+import { Github, Twitter, Mail, Heart, Rss } from 'lucide-react'
 
 const socialLinks = [
   {
@@ -16,6 +16,11 @@ const socialLinks = [
     name: 'Email',
     href: 'mailto:zx88cvb@gmail.com',
     icon: Mail,
+  },
+  {
+    name: 'RSS',
+    href: '/api/rss',
+    icon: Rss,
   },
 ]
 
