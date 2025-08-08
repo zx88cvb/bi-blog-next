@@ -1,4 +1,4 @@
-import RSS from 'rss'
+import { Feed } from 'feed'
 import { getAllPosts } from './posts'
 
 export interface RSSConfig {
@@ -15,7 +15,7 @@ const defaultConfig: RSSConfig = {
   title: 'Bi\'s Blog',
   description: '个人博客，分享技术与生活',
   site_url: process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000',
-  feed_url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000'}/api/rss`,
+  feed_url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000'}/api/feed`,
   author: 'Bi',
   language: 'zh-CN',
   pubDate: new Date()
@@ -24,32 +24,50 @@ const defaultConfig: RSSConfig = {
 export async function generateRSSFeed(config: Partial<RSSConfig> = {}): Promise<string> {
   const finalConfig = { ...defaultConfig, ...config }
   
-  const feed = new RSS({
+  const feed = new Feed({
     title: finalConfig.title,
     description: finalConfig.description,
-    feed_url: finalConfig.feed_url,
-    site_url: finalConfig.site_url,
-    author: finalConfig.author,
+    id: finalConfig.site_url,
+    link: finalConfig.site_url,
     language: finalConfig.language,
-    pubDate: finalConfig.pubDate,
-    ttl: 60 // TTL in minutes
+    image: `${finalConfig.site_url}/logo.png`,
+    favicon: `${finalConfig.site_url}/favicon.ico`,
+    copyright: `All rights reserved ${new Date().getFullYear()}, ${finalConfig.author}`,
+    updated: finalConfig.pubDate,
+    generator: 'Next.js',
+    feedLinks: {
+      rss2: finalConfig.feed_url,
+    },
+    author: {
+      name: finalConfig.author,
+      email: 'zx88cvb@gmail.com',
+      link: finalConfig.site_url,
+    },
   })
 
   try {
     const posts = await getAllPosts()
     
     posts.forEach((post) => {
-      feed.item({
+      feed.addItem({
         title: post.title,
+        id: `${finalConfig.site_url}/posts/${post.slug}`,
+        link: `${finalConfig.site_url}/posts/${post.slug}`,
         description: post.excerpt,
-        url: `${finalConfig.site_url}/posts/${post.slug}`,
-        author: post.author,
+        content: post.excerpt,
+        author: [
+          {
+            name: post.author,
+            email: 'zx88cvb@gmail.com',
+            link: finalConfig.site_url,
+          },
+        ],
         date: new Date(post.date),
-        categories: post.tags
+        category: post.tags.map(tag => ({ name: tag })),
       })
     })
 
-    return feed.xml()
+    return feed.rss2()
   } catch (error) {
     console.error('Error generating RSS feed:', error)
     throw new Error('Failed to generate RSS feed')

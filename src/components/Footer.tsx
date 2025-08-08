@@ -19,7 +19,7 @@ const socialLinks = [
   },
   {
     name: 'RSS',
-    href: '/api/rss',
+    href: '/api/feed',
     icon: Rss,
   },
 ]

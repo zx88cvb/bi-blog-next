@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       'application/rss+xml': [
         {
           title: 'Bi Blog RSS Feed',
-          url: '/api/rss',
+          url: '/api/feed',
         },
       ],
     },
