@@ -11,6 +11,7 @@ export interface RSSConfig {
   pubDate?: Date
 }
 
+// rss基础配置
 const defaultConfig: RSSConfig = {
   title: 'Bi\'s Blog',
   description: '个人博客，分享技术与生活',
