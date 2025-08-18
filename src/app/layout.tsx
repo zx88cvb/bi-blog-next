@@ -40,9 +40,39 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000'
+  
+  // 网站JSON-LD结构化数据
+  const websiteJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Bi Blog',
+    description: '分享技术见解，记录成长历程，探索未知领域',
+    url: baseUrl,
+    author: {
+      '@type': 'Person',
+      name: 'Bi',
+      url: baseUrl,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Bi Blog',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${baseUrl}/logo.png`,
+      },
+    },
+  }
+
   return (
     <html lang="zh-CN" suppressHydrationWarning>
       <body className="font-sans">
+        {/* 网站结构化数据 */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+        
         <Header />
         <main className="min-h-screen pt-16">
           {children}

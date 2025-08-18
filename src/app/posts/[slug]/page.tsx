@@ -8,11 +8,65 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import Breadcrumb from '@/components/Breadcrumb'
+import type { Metadata } from 'next'
 
 interface PostPageProps {
   params: Promise<{
     slug: string
   }>
+}
+
+export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
+  const { slug } = await params
+  const post = await getPostBySlug(slug)
+  
+  if (!post) {
+    return {
+      title: '文章未找到',
+      description: '您要查找的文章不存在',
+    }
+  }
+
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000'
+  const postUrl = `${baseUrl}/posts/${slug}`
+  const imageUrl = `${baseUrl}/logo.png`
+
+  return {
+    title: `${post.title} | Bi Blog`,
+    description: post.excerpt,
+    keywords: post.tags.join(', '),
+    authors: [{ name: post.author }],
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: postUrl,
+      siteName: 'Bi Blog',
+      locale: 'zh_CN',
+      type: 'article',
+      publishedTime: post.date,
+      authors: [post.author],
+      tags: post.tags,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: [imageUrl],
+      creator: '@HaydenBi',
+    },
+    alternates: {
+      canonical: postUrl,
+    },
+  }
 }
 
 export default async function PostPage({ params }: PostPageProps) {
@@ -43,10 +97,60 @@ export default async function PostPage({ params }: PostPageProps) {
       date: p.date,
     }))
 
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000'
+  const postUrl = `${baseUrl}/posts/${slug}`
+  
+  // 面包屑导航数据
+  const breadcrumbItems = [
+    { label: '文章', href: '/posts' },
+    { label: post.title }
+  ]
+  
+  // 生成JSON-LD结构化数据
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    image: `${baseUrl}/logo.png`,
+    author: {
+      '@type': 'Person',
+      name: post.author,
+      url: baseUrl,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Bi Blog',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${baseUrl}/logo.png`,
+      },
+    },
+    datePublished: post.date,
+    dateModified: post.date,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': postUrl,
+    },
+    url: postUrl,
+    keywords: post.tags.join(', '),
+    articleBody: post.content?.replace(/<[^>]*>/g, '') || '', // 移除HTML标签
+  }
+
   return (
-    <div className="min-h-screen py-8">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Back Button */}
+    <>
+      {/* JSON-LD结构化数据 */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      
+      <div className="min-h-screen py-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* 面包屑导航 */}
+          <Breadcrumb items={breadcrumbItems} />
+          
+          {/* Back Button */}
         <Button variant="ghost" size="sm" className="mb-8" asChild>
           <Link href="/posts" className="flex items-center">
             <ArrowLeft className="h-4 w-4 mr-2" />
@@ -162,8 +266,9 @@ export default async function PostPage({ params }: PostPageProps) {
             )}
           </CardContent>
         </Card>
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 
