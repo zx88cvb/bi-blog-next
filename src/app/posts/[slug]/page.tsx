@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import Breadcrumb from '@/components/Breadcrumb'
+import PostAnalytics from '@/components/PostAnalytics'
 import type { Metadata } from 'next'
 
 interface PostPageProps {
@@ -139,6 +140,15 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
     <>
+      {/* Google Analytics 事件追踪 */}
+      <PostAnalytics
+        postTitle={post.title}
+        postSlug={slug}
+        author={post.author}
+        tags={post.tags}
+        readTime={calculateReadTime(post.content || '')}
+      />
+      
       {/* JSON-LD结构化数据 */}
       <script
         type="application/ld+json"

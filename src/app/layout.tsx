@@ -3,6 +3,7 @@ import "./globals.css";
 import "../styles/prism.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 // 网站访客分析
 import { Analytics } from '@vercel/analytics/next';
 
@@ -41,6 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000'
+  const gaId = process.env.NEXT_PUBLIC_GA_ID
   
   // 网站JSON-LD结构化数据
   const websiteJsonLd = {
@@ -67,6 +69,9 @@ export default function RootLayout({
   return (
     <html lang="zh-CN" suppressHydrationWarning>
       <body className="font-sans">
+        {/* Google Analytics */}
+        {gaId && <GoogleAnalytics gaId={gaId} />}
+        
         {/* 网站结构化数据 */}
         <script
           type="application/ld+json"
