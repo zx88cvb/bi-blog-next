@@ -16,8 +16,6 @@ interface GoogleAnalyticsProps {
 
 export default function GoogleAnalytics({ gaId }: GoogleAnalyticsProps) {
   useEffect(() => {
-    console.log("process.env.NODE_ENV", process.env.NODE_ENV)
-    console.log("gaId", gaId)
     // 只在生产环境加载
     if (process.env.NODE_ENV !== 'production') {
       return
