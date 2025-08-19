@@ -81,7 +81,8 @@ export default async function PostPage({ params }: PostPageProps) {
   // 计算阅读时间（基于内容长度的简单估算）
   const calculateReadTime = (content: string): string => {
     const wordsPerMinute = 200
-    const words = content.length / 5 // 假设平均每个单词5个字符
+    // 假设平均每个单词5个字符
+    const words = content.length / 5
     const minutes = Math.ceil(words / wordsPerMinute)
     return `${minutes} 分钟`
   }
