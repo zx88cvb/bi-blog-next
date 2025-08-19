@@ -1,6 +1,6 @@
 'use client'
 
-import { trackEvent } from '@/components/GoogleAnalytics'
+import { trackEvent } from '@/lib/analytics'
 import { ReactNode } from 'react'
 
 interface AnalyticsLinkProps {

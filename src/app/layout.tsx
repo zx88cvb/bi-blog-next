@@ -3,7 +3,7 @@ import "./globals.css";
 import "../styles/prism.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { GoogleAnalytics } from "@next/third-parties/google";
 // 网站访客分析
 import { Analytics } from '@vercel/analytics/next';
 

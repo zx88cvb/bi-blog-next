@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import { trackEvent } from '@/components/GoogleAnalytics'
+import { trackEvent } from '@/lib/analytics'
 
 interface PostAnalyticsProps {
   postTitle: string
