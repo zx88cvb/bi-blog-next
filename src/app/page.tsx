@@ -36,7 +36,7 @@ export default async function Home() {
                 <span className="text-primary"> 个人博客</span>
               </h1>
               <p className="text-lg leading-8 text-muted-foreground max-w-2xl mx-auto min-h-[3rem]">
-                <TypewriterText text="我是一名充满热情的全栈开发工程师，致力于通过技术创造美好的数字体验。在这里，我分享我的技术探索、项目实践和对编程世界的思考。" />
+                <TypewriterText text="Hi, 我是Bi👋 在这里，分享我的技术探索、项目实践和日常生活。同时也在尝试独立开发的道路,希望和大家一起努力!" />
               </p>
             </div>
           </div>
@@ -51,7 +51,7 @@ export default async function Home() {
               最新文章
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              探索我最新的技术思考和实践经验
+              分享技术问题以及日常生活的碎碎念
             </p>
           </div>
           

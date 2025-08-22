@@ -60,9 +60,9 @@ export default function PostsClient({ posts }: PostDisplayProps) {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold tracking-tight text-foreground mb-4">技术文章</h1>
+          <h1 className="text-4xl font-bold tracking-tight text-foreground mb-4">文章列表</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            探索前端技术的无限可能，分享实战经验与深度思考
+            分享技术问题以及日常生活的碎碎念
           </p>
         </div>
 

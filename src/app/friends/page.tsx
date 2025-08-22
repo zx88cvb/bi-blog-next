@@ -18,7 +18,7 @@ export default function FriendsPage() {
           </div>
           <h1 className="text-4xl font-bold text-foreground mb-4">友情链接</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            这里是我的技术朋友们，他们都是各自领域的专家，值得关注和学习
+            我的小伙伴们和一些有趣的网站
           </p>
         </div>
 

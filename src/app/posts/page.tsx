@@ -6,7 +6,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: '文章列表 | Bi Blog',
   description: '浏览所有技术文章，包含前端开发、编程技巧、技术见解等内容',
-  keywords: '技术博客, 前端开发, 编程, 技术文章',
+  keywords: '技术博客, 前端开发, 编程, 技术文章, 日常',
   openGraph: {
     title: '文章列表 | Bi Blog',
     description: '浏览所有技术文章，包含前端开发、编程技巧、技术见解等内容',
