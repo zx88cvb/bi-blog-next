@@ -1,14 +1,24 @@
 {
   "friends": [
     {
-      "id": "1",
-      "name": "Google",
-      "url": "https://www.google.com/",
-      "description": "我来占个位置",
-      "avatar": "/images/friends/zhangsan.jpg",
+      "id": "2",
+      "name": "domainsexplore",
+      "url": "https://domainsexplore.com",
+      "description": "域名查询和ip定位",
+      "avatar": "",
       "status": "active",
-      "tags": ["Google"],
-      "addedDate": "2025-07-10"
+      "tags": ["域名", "IP"],
+      "addedDate": "2025-08-08"
+    },
+    {
+      "id": "3",
+      "name": "gamebeanplay",
+      "url": "https://gamebeanplay.com",
+      "description": "每日小游戏",
+      "avatar": "",
+      "status": "active",
+      "tags": ["游戏"],
+      "addedDate": "2025-08-21"
     }
   ],
   "statistics": {

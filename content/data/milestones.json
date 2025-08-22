@@ -12,6 +12,19 @@
         "实现响应式设计和暗色模式",
         "集成Markdown文章管理系统"
       ]
+    },
+    {
+      "id": "2",
+      "date": "2025-08-20",
+      "title": "博客SEO优化",
+      "description": "SEO优化进行中",
+      "type": "project",
+      "icon": "🔍",
+      "details": [
+        "添加robots.txt",
+        "添加sitemap.xml",
+        "集成Google Analytics"
+      ]
     }
   ],
   "categories": [

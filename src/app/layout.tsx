@@ -10,7 +10,7 @@ import { Analytics } from '@vercel/analytics/next';
 export const metadata: Metadata = {
   title: "Bi Blog - 个人博客",
   description: "分享技术见解，记录成长历程，探索未知领域",
-  keywords: ["博客", "技术", "前端", "开发"],
+  keywords: ["博客", "技术", "前端", "开发", "后端", "全栈", "出海"],
   authors: [{ name: "Bi" }],
   creator: "Bi",
   publisher: "Bi",

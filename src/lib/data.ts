@@ -101,7 +101,14 @@ export function getMilestonesData(): MilestoneData {
   try {
     const fullPath = path.join(dataDirectory, 'milestones.json')
     const fileContents = fs.readFileSync(fullPath, 'utf8')
-    return JSON.parse(fileContents)
+    const data = JSON.parse(fileContents)
+    
+    // 按照日期倒序排列里程碑数据
+    data.milestones.sort((a: any, b: any) => {
+      return new Date(b.date).getTime() - new Date(a.date).getTime()
+    })
+    
+    return data
   } catch (error) {
     console.error('Error reading milestones data:', error)
     throw new Error('Failed to load milestones data')
