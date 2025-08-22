@@ -13,7 +13,7 @@ export default function AboutPage() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Avatar className="w-32 h-32 mx-auto mb-6 shadow-lg">
-            <AvatarImage src="/avatar.jpg" alt={profile.name} />
+            <AvatarImage src={profile.avatar} alt={profile.name} />
             <AvatarFallback className="bg-gradient-to-br from-primary to-primary/60 text-4xl font-bold text-white">
               {profile.name.slice(0, 2)}
             </AvatarFallback>
