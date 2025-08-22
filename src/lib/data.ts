@@ -104,7 +104,7 @@ export function getMilestonesData(): MilestoneData {
     const data = JSON.parse(fileContents)
     
     // 按照日期倒序排列里程碑数据
-    data.milestones.sort((a: any, b: any) => {
+    data.milestones.sort((a: { date: string }, b: { date: string }) => {
       return new Date(b.date).getTime() - new Date(a.date).getTime()
     })
     
