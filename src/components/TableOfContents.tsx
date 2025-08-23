@@ -67,7 +67,7 @@ export default function TableOfContents({ content, className }: TableOfContentsP
         const allHeadings = document.querySelectorAll('h1, h2, h3, h4, h5, h6')
         element = Array.from(allHeadings).find(h => 
           h.textContent?.trim() === item.title
-        ) as Element
+        ) as HTMLElement || null
       }
       
       if (element) {
