@@ -27,6 +27,11 @@ pre[class*="language-"] {
   border-radius: 8px;
   background: #1e1e1e;
   border: 1px solid #404040;
+  max-width: 100%;
+  word-wrap: normal;
+  white-space: pre;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 :not(pre) > code[class*="language-"] {

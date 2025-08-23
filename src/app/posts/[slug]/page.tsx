@@ -10,6 +10,7 @@ import { Separator } from '@/components/ui/separator'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import Breadcrumb from '@/components/Breadcrumb'
 import PostAnalytics from '@/components/PostAnalytics'
+import TableOfContents from '@/components/TableOfContents'
 import type { Metadata } from 'next'
 
 interface PostPageProps {
@@ -87,6 +88,26 @@ export default async function PostPage({ params }: PostPageProps) {
     return `${minutes} 分钟`
   }
 
+  // 为文章内容中的标题添加id属性
+  const addHeadingIds = (content: string): string => {
+    return content.replace(/<h([1-6])([^>]*)>([^<]+)<\/h[1-6]>/g, (match, level, attrs, text) => {
+      // 生成id（移除特殊字符，转换为小写，用连字符连接）
+      const id = text
+        .trim()
+        .toLowerCase()
+        .replace(/[^\w\s\u4e00-\u9fff]/g, '') // 保留中文字符
+        .replace(/\s+/g, '-')
+        .substring(0, 50) // 限制长度
+      
+      // 检查是否已经有id属性
+      if (attrs.includes('id=')) {
+        return match
+      }
+      
+      return `<h${level}${attrs} id="${id}">${text}</h${level}>`
+    })
+  }
+
   // 获取相关文章（排除当前文章）
   const allPosts = await getAllPosts()
   const relatedPosts = allPosts
@@ -97,6 +118,7 @@ export default async function PostPage({ params }: PostPageProps) {
       title: p.title,
       slug: p.slug,
       date: p.date,
+      excerpt: p.excerpt,
     }))
 
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000'
@@ -157,7 +179,7 @@ export default async function PostPage({ params }: PostPageProps) {
       />
       
       <div className="min-h-screen py-8">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* 面包屑导航 */}
           <Breadcrumb items={breadcrumbItems} />
           
@@ -170,63 +192,62 @@ export default async function PostPage({ params }: PostPageProps) {
         </Button>
 
         {/* Article Header */}
-        <Card className="mb-12">
-          <CardHeader className="pb-8">
-            <div className="space-y-4">
-              <CardTitle className="text-4xl leading-tight">
-                {post.title}
-              </CardTitle>
-              
-              <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <Avatar className="w-6 h-6">
-                    <AvatarImage src="/author-avatar.jpg" alt={post.author} />
-                    <AvatarFallback className="text-xs">
-                      {post.author.charAt(0)}
-                    </AvatarFallback>
-                  </Avatar>
-                  <span>{post.author}</span>
-                </div>
-                <Separator orientation="vertical" className="h-4" />
-                <div className="flex items-center gap-1">
-                  <Calendar className="h-4 w-4" />
-                  {formatDate(post.date)}
-                </div>
-                <Separator orientation="vertical" className="h-4" />
-                <div className="flex items-center gap-1">
-                  <Clock className="h-4 w-4" />
-                  {calculateReadTime(post.content || '')}
-                </div>
-              </div>
-              
-              <div className="flex flex-wrap gap-2">
-                {post.tags.map((tag) => (
-                  <Badge key={tag} variant="secondary" className="text-xs">
-                    <Tag className="h-3 w-3 mr-1" />
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-          </CardHeader>
+        <div className="mb-12 space-y-4">
+          <h1 className="text-4xl leading-tight font-bold text-foreground">
+            {post.title}
+          </h1>
           
-          {/* <CardContent className="pt-0">
-            <CardDescription className="text-xl leading-relaxed">
-              {post.excerpt}
-            </CardDescription>
-          </CardContent> */}
+          <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2">
+              <Avatar className="w-6 h-6">
+                <AvatarImage src="/author-avatar.jpg" alt={post.author} />
+                <AvatarFallback className="text-xs">
+                  {post.author.charAt(0)}
+                </AvatarFallback>
+              </Avatar>
+              <span>{post.author}</span>
+            </div>
+            <Separator orientation="vertical" className="h-4" />
+            <div className="flex items-center gap-1">
+              <Calendar className="h-4 w-4" />
+              {formatDate(post.date)}
+            </div>
+            <Separator orientation="vertical" className="h-4" />
+            <div className="flex items-center gap-1">
+              <Clock className="h-4 w-4" />
+              {calculateReadTime(post.content || '')}
+            </div>
+          </div>
+          
+          <div className="flex flex-wrap gap-2">
+            {post.tags.map((tag) => (
+              <Badge key={tag} variant="secondary" className="text-xs">
+                <Tag className="h-3 w-3 mr-1" />
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        </div>
 
-          <CardContent className="pt-0">
-            <div className="prose prose-lg prose-neutral dark:prose-invert max-w-none">
+        {/* 文章内容和目录的两列布局 */}
+        <div className="lg:flex lg:gap-8 mb-12">
+          {/* 文章内容 */}
+          <div className="lg:flex-1 min-w-0">
+            <div className="prose prose-lg prose-neutral dark:prose-invert max-w-none overflow-hidden">
               <div 
                 className="text-foreground leading-relaxed markdown-content"
                 dangerouslySetInnerHTML={{
-                  __html: post.content || ''
+                  __html: addHeadingIds(post.content || '')
                 }}
               />
             </div>
-          </CardContent>
-        </Card>
+          </div>
+          
+          {/* 目录 - 独立的背景 */}
+          <div className="lg:w-64 lg:flex-shrink-0 mt-8 lg:mt-0">
+            <TableOfContents content={post.content || ''} />
+          </div>
+        </div>
 
         {/* Article Content */}
         {/* <Card className="mb-12">
@@ -243,40 +264,42 @@ export default async function PostPage({ params }: PostPageProps) {
         </Card> */}
 
         {/* Related Posts */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-2xl flex items-center gap-2">
-              相关文章
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {relatedPosts.map((relatedPost) => (
-                <Card key={relatedPost.id} className="group hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-                  <CardHeader className="pb-4">
-                    <CardTitle className="text-lg group-hover:text-primary transition-colors">
-                      <Link href={`/posts/${relatedPost.slug}`}>
-                        {relatedPost.title}
-                      </Link>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                      <Calendar className="h-4 w-4" />
-                      {formatDate(relatedPost.date)}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+        <div className="lg:max-w-4xl">
+          <h2 className="text-2xl font-bold mb-6 text-foreground">
+            相关文章
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {relatedPosts.map((relatedPost) => (
+              <Card key={relatedPost.id} className="group hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col h-full">
+                <CardHeader className="pb-3 flex-grow">
+                  <CardTitle className="text-lg group-hover:text-primary transition-colors mb-2">
+                    <Link href={`/posts/${relatedPost.slug}`}>
+                      {relatedPost.title}
+                    </Link>
+                  </CardTitle>
+                  {relatedPost.excerpt && (
+                    <p className="text-sm text-muted-foreground line-clamp-2">
+                      {relatedPost.excerpt}
+                    </p>
+                  )}
+                </CardHeader>
+                <CardContent className="pt-0 mt-auto">
+                  <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                    <Calendar className="h-4 w-4" />
+                    {formatDate(relatedPost.date)}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          
+          {relatedPosts.length === 0 && (
+            <div className="text-center py-8">
+              <p className="text-muted-foreground">暂无相关文章</p>
             </div>
-            
-            {relatedPosts.length === 0 && (
-              <div className="text-center py-8">
-                <p className="text-muted-foreground">暂无相关文章</p>
-              </div>
-            )}
-          </CardContent>
-        </Card>
+          )}
+        </div>
         </div>
       </div>
     </>
