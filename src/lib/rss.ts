@@ -16,7 +16,7 @@ const defaultConfig: RSSConfig = {
   title: 'Bi\'s Blog',
   description: '个人博客，分享技术与生活',
   site_url: process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000',
-  feed_url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000'}/api/feed`,
+  feed_url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000'}/feed.xml`,
   author: 'Bi',
   language: 'zh-CN',
   pubDate: new Date()
