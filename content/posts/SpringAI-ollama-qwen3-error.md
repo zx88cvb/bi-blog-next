@@ -56,7 +56,7 @@ author: "Bi"
 https://github.com/spring-projects/spring-ai/pull/3372
 
 出现问题的源码如下图
-![](/img/bVdjHN4)
+![](https://p9-xtjj-sign.byteimg.com/tos-cn-i-73owjymdk6/4ca8551f7eea4044bec067f783246d5c~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAgQmk=:q75.awebp?rk3s=f64ab15b&x-expires=1756698583&x-signature=%2Bgs2GMjVUqCFCPHChP6CW6yXS3s%3D)
 
 ### 解决方法
 这个时候我们要重写OllamaChatModel，重写的方式就是新建一个OllamaAlibabaChatModel类。如下代码
@@ -613,7 +613,7 @@ public class OllamaAlibabaChatModel implements ChatModel {
 }
 ```
 上面这段代码其实大部分是把OllamaChatModel的类复制过来，只修改了关键部分
-![](/img/bVdjHN4)
+![](https://p9-xtjj-sign.byteimg.com/tos-cn-i-73owjymdk6/4ca8551f7eea4044bec067f783246d5c~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAgQmk=:q75.awebp?rk3s=f64ab15b&x-expires=1756698583&x-signature=%2Bgs2GMjVUqCFCPHChP6CW6yXS3s%3D)
 把图片中if语句中的代码替换成如下代码即可
 
 ```java
@@ -735,4 +735,4 @@ serviceChatClient为自己定义的方法，形参中把OllamaChatModel替换为
 ```
 通过以上配置即可解决Cannot invoke "java.time.Duration.plus(java.time.Duration)" because "evalDuration" is null 错误
 
-如果以上解决方法有其他问题可以在下方的留言区告诉我
+如果以上解决方法有其他问题可以通过邮件联系我
