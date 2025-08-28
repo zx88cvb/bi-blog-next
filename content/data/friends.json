@@ -8,7 +8,8 @@
       "avatar": "https://dhuqkmqv7zzml403.public.blob.vercel-storage.com/image/friends/domainsexplore.com.png",
       "status": "active",
       "tags": ["域名", "IP"],
-      "addedDate": "2025-08-08"
+      "addedDate": "2025-08-08",
+      "order": 3
     },
     {
       "id": "3",
@@ -18,7 +19,19 @@
       "avatar": "https://dhuqkmqv7zzml403.public.blob.vercel-storage.com/image/friends/gamebeanplay_logo.png",
       "status": "active",
       "tags": ["游戏"],
-      "addedDate": "2025-08-21"
+      "addedDate": "2025-08-21",
+      "order": 2
+    },
+    {
+      "id": "4",
+      "name": "gamebeanplay",
+      "url": "https://x-twitter-downloader.com/",
+      "description": "X(Twitter)视频下载工具",
+      "avatar": "https://x-twitter-downloader.com/favicon.ico",
+      "status": "active",
+      "tags": ["X", "Twitter", "视频", "下载"],
+      "addedDate": "2025-08-28",
+      "order": 1
     }
   ],
   "statistics": {
@@ -29,7 +42,7 @@
   },
   "settings": {
     "displayMode": "grid",
-    "sortBy": "addedDate",
+    "sortBy": "order",
     "showStatus": true,
     "showTags": true,
     "showDescription": true

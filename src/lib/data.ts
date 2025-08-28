@@ -57,6 +57,7 @@ export interface FriendsData {
     status: string
     tags: string[]
     addedDate: string
+    order: number
   }>
   categories: Array<{
     id: string
@@ -119,7 +120,14 @@ export function getFriendsData(): FriendsData {
   try {
     const fullPath = path.join(dataDirectory, 'friends.json')
     const fileContents = fs.readFileSync(fullPath, 'utf8')
-    return JSON.parse(fileContents)
+    const data = JSON.parse(fileContents)
+    
+    // 按照 order 字段升序排列 friends 数据
+    data.friends.sort((a: { order: number }, b: { order: number }) => {
+      return a.order - b.order
+    })
+    
+    return data
   } catch (error) {
     console.error('Error reading friends data:', error)
     throw new Error('Failed to load friends data')

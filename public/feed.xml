@@ -4,7 +4,7 @@
         <title>Bi's Blog</title>
         <link>localhost:3000</link>
         <description>个人博客，分享技术与生活</description>
-        <lastBuildDate>Mon, 25 Aug 2025 05:38:07 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 28 Aug 2025 09:05:47 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Next.js</generator>
         <language>zh-CN</language>
@@ -244,7 +244,7 @@
 <p>参考官方回复:<a href="https://github.com/spring-projects/spring-ai/issues/3369">https://github.com/spring-projects/spring-ai/issues/3369</a>
 <a href="https://github.com/spring-projects/spring-ai/pull/3372">https://github.com/spring-projects/spring-ai/pull/3372</a></p>
 <p>出现问题的源码如下图
-<img src="/img/bVdjHN4" alt=""></p>
+<img src="https://p9-xtjj-sign.byteimg.com/tos-cn-i-73owjymdk6/4ca8551f7eea4044bec067f783246d5c~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAgQmk=:q75.awebp?rk3s=f64ab15b&#x26;x-expires=1756698583&#x26;x-signature=%2Bgs2GMjVUqCFCPHChP6CW6yXS3s%3D" alt=""></p>
 <h3>解决方法</h3>
 <p>这个时候我们要重写OllamaChatModel，重写的方式就是新建一个OllamaAlibabaChatModel类。如下代码</p>
 <pre class="language-java"><code class="language-java code-highlight"><span class="code-line"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>bi<span class="token punctuation">.</span>demoai<span class="token punctuation">.</span>model</span><span class="token punctuation">;</span>
@@ -799,7 +799,7 @@
 </span><span class="code-line"><span class="token punctuation">}</span>
 </span></code></pre>
 <p>上面这段代码其实大部分是把OllamaChatModel的类复制过来，只修改了关键部分
-<img src="/img/bVdjHN4" alt="">
+<img src="https://p9-xtjj-sign.byteimg.com/tos-cn-i-73owjymdk6/4ca8551f7eea4044bec067f783246d5c~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAgQmk=:q75.awebp?rk3s=f64ab15b&#x26;x-expires=1756698583&#x26;x-signature=%2Bgs2GMjVUqCFCPHChP6CW6yXS3s%3D" alt="">
 把图片中if语句中的代码替换成如下代码即可</p>
 <pre class="language-java"><code class="language-java code-highlight"><span class="code-line"><span class="token keyword">if</span> <span class="token punctuation">(</span>previousChatResponse <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&#x26;&#x26;</span> previousChatResponse<span class="token punctuation">.</span><span class="token function">getMetadata</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 </span><span class="code-line">            <span class="token class-name">Object</span> metadataEvalDuration <span class="token operator">=</span> previousChatResponse<span class="token punctuation">.</span><span class="token function">getMetadata</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token constant">METADATA_EVAL_DURATION</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -916,7 +916,7 @@ serviceChatClient为自己定义的方法，形参中把OllamaChatModel替换为
 </span><span class="code-line">    <span class="token punctuation">}</span>
 </span></code></pre>
 <p>通过以上配置即可解决Cannot invoke "java.time.Duration.plus(java.time.Duration)" because "evalDuration" is null 错误</p>
-<p>如果以上解决方法有其他问题可以在下方的留言区告诉我</p>]]></content:encoded>
+<p>如果以上解决方法有其他问题可以通过邮件联系我</p>]]></content:encoded>
             <author>zx88cvb@gmail.com (Bi)</author>
             <category>Spring AI</category>
             <category>Java</category>
