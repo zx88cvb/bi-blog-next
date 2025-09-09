@@ -4,7 +4,7 @@
         <title>Bi's Blog</title>
         <link>localhost:3000</link>
         <description>个人博客，分享技术与生活</description>
-        <lastBuildDate>Thu, 28 Aug 2025 09:05:47 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 09 Sep 2025 08:04:33 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Next.js</generator>
         <language>zh-CN</language>
