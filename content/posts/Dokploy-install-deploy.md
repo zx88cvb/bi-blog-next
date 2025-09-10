@@ -37,7 +37,7 @@ Dokploy有两种使用模式：云版本，开源版本
 
 使用云版本每个月会有一定的费用，而开源版本是完全免费的 收费模式如下图
 
-![](https://cdn.nlark.com/yuque/0/2025/png/2709171/1757491869182-ce73125a-2bcf-402d-9e7f-2053df9a0307.png)
+![](https://r2.haydenbi.com/post/1757491869182-ce73125a-2bcf-402d-9e7f-2053df9a0307.png)
 
 本篇介绍的是在服务器上安装的开源版本
 
@@ -59,21 +59,21 @@ curl -sSL https://dokploy.com/install.sh | sh
 
 <font style="color:#DF2A3F;"></font>
 
-![](https://cdn.nlark.com/yuque/0/2025/png/2709171/1757491213684-e51efb9e-4474-44ed-840b-b66e00bf5c39.png)
+![](https://r2.haydenbi.com/post/1757491213684-e51efb9e-4474-44ed-840b-b66e00bf5c39.png)
 
 进入图中页面可以注册你的账号密码
 
 # 部署第一个项目
 这里我使用NextJS项目为例来部署一个项目
 
-![](https://cdn.nlark.com/yuque/0/2025/png/2709171/1757492028891-985531bc-6967-47b9-a8e4-8e0e1bc103c5.png)
+![](https://r2.haydenbi.com/post/aa057a46-32ad-4cea-accd-839edfc7f845.png)
 
 登录到主页面后可以看到Dokploy的控制台
 
 ## 新建Project
 选择左侧菜单的Projects-> 点击右侧的Create Project
 
-![](https://cdn.nlark.com/yuque/0/2025/png/2709171/1757492233682-20797c34-f19f-4a27-a3dc-97b996059d8b.png)
+![](https://r2.haydenbi.com/post/1757492233682-20797c34-f19f-4a27-a3dc-97b996059d8b.png)
 
 输入项目名称和描述信息
 
@@ -84,12 +84,12 @@ curl -sSL https://dokploy.com/install.sh | sh
 
 Service是Project下面的服务，可以理解成真正意义上你的单独的项目
 
-![](https://cdn.nlark.com/yuque/0/2025/png/2709171/1757492393834-2b13e187-4ad6-4a91-9a38-e6b0daaa39de.png)
+![](https://r2.haydenbi.com/post/1757492393834-2b13e187-4ad6-4a91-9a38-e6b0daaa39de.png)
 
 点击右侧的Create Service -> 选择Application->填写你的项目名称等信息
 
 ## 配置关联Git项目仓库
-![](https://cdn.nlark.com/yuque/0/2025/png/2709171/1757492692905-68ab1515-9fb7-4ae4-ba01-c9b2d24e025d.png)
+![](https://r2.haydenbi.com/post/997e07bb-1ce4-4b9b-936d-d04ce5f21bfc.png)
 
 点击刚刚创建的Service会进入到如图所示的页面
 
@@ -99,12 +99,12 @@ Service是Project下面的服务，可以理解成真正意义上你的单独的
 4. Repository仓库可以看到你Github上所有的项目，这时选择你需要部署的项目
 5. 下面的Branch 、Build Path等配置不变按照默认的来
 
-![](https://cdn.nlark.com/yuque/0/2025/png/2709171/1757493061897-e9fcd829-d6f6-4be6-a154-eb213127d026.png)
+![](https://r2.haydenbi.com/post/1757493061897-e9fcd829-d6f6-4be6-a154-eb213127d026.png)
 
 最后点击Save保存 记住一定得点一下，下一步配置Build时如果没保存会把刚刚的配置清空掉
 
 ## 配置Build
-![](https://cdn.nlark.com/yuque/0/2025/png/2709171/1757493174100-3fdc2a3b-be6b-46e6-84a4-e2483a3b7133.png)
+![](https://r2.haydenbi.com/post/1757493174100-3fdc2a3b-be6b-46e6-84a4-e2483a3b7133.png)
 
 页面接着往下滑会看到Build Type设置。
 
@@ -168,7 +168,7 @@ CMD ["node", "server.js"]
 
 
 ## 设置环境变量
-![](https://cdn.nlark.com/yuque/0/2025/png/2709171/1757493604873-0b8ff1f8-919f-4e51-bbe9-cc9ef7e5eeb8.png)
+![](https://r2.haydenbi.com/post/1757493604873-0b8ff1f8-919f-4e51-bbe9-cc9ef7e5eeb8.png)
 
 点击菜单上面的Environment可以看到如上图的页面
 
@@ -177,7 +177,7 @@ CMD ["node", "server.js"]
 最后点击最下面的Save保存
 
 ## 部署
-![](https://cdn.nlark.com/yuque/0/2025/png/2709171/1757493836315-8d927632-47a3-4900-85e8-ba9ab9705ebc.png)
+![](https://r2.haydenbi.com/post/1757493836315-8d927632-47a3-4900-85e8-ba9ab9705ebc.png)
 
 回到General菜单，点击Deploy部署按钮即可
 
@@ -191,7 +191,7 @@ CMD ["node", "server.js"]
 
 把域名指向你服务器的公网IP
 
-![](https://cdn.nlark.com/yuque/0/2025/png/2709171/1757494396551-d01272f7-f518-408d-b526-86bbdf5e31c9.png)
+![](https://r2.haydenbi.com/post/1757494396551-d01272f7-f518-408d-b526-86bbdf5e31c9.png)
 
 Type: A 
 
@@ -204,11 +204,11 @@ conent: 服务器的公网IP
 如果需要配置www前缀 可以参考CNAME那一栏的配置
 
 ## 配置域名和SSL证书
-![](https://cdn.nlark.com/yuque/0/2025/png/2709171/1757493997311-75daa751-d17d-49a6-b660-34d5d7274b58.png)
+![](https://r2.haydenbi.com/post/1757493997311-75daa751-d17d-49a6-b660-34d5d7274b58.png)
 
 选择Domains这栏->点击Add Domain
 
-![](https://cdn.nlark.com/yuque/0/2025/png/2709171/1757494054323-6449c70f-e2fa-4bf6-9c6c-176b150f80de.png)
+![](https://r2.haydenbi.com/post/1757494054323-6449c70f-e2fa-4bf6-9c6c-176b150f80de.png)
 
 可以参考我的配置，把Host换成你的域名
 
@@ -225,11 +225,11 @@ Container Port是Dockerfile里写的容器内端口，这里我是3000
 
 目前的办法是通过Cloudflare进行转发
 
-![](https://cdn.nlark.com/yuque/0/2025/png/2709171/1757494937335-50f5b867-6a75-4f0d-aa22-cf2e2cb23932.png)
+![](https://r2.haydenbi.com/post/1757494937335-50f5b867-6a75-4f0d-aa22-cf2e2cb23932.png)
 
 Cloudflare左侧菜单 Rules->Page Rules->点击Create Page Rule
 
-![](https://cdn.nlark.com/yuque/0/2025/png/2709171/1757494986158-1f9e25ef-9ef0-4e98-ba98-7f7353ae59af.png)
+![](https://r2.haydenbi.com/post/1757494986158-1f9e25ef-9ef0-4e98-ba98-7f7353ae59af.png)
 
 具体配置可以参考我的配置，把域名换成你自己的即可
 
@@ -238,7 +238,7 @@ Cloudflare左侧菜单 Rules->Page Rules->点击Create Page Rule
 目前为止项目配置到此结束，通过域名和www域名转发到主域名都可以访问了！
 
 # 给Dokploy添加域名(可选)
-![](https://cdn.nlark.com/yuque/0/2025/png/2709171/1757495171453-4fefa141-d696-4e1a-b254-00b08c6d6c23.png)
+![](https://r2.haydenbi.com/post/1757495171453-4fefa141-d696-4e1a-b254-00b08c6d6c23.png)
 
 <font style="color:#DF2A3F;">配置之前记得设置DNS把域名映射到服务器的IP上，和上面4.1配置DNS步骤一样</font>
 
