@@ -28,16 +28,30 @@ export default function FriendsPage() {
             <Card key={friend.id} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <CardHeader className="pb-4">
                 <div className="flex items-start gap-4">
-                  <Avatar className="w-16 h-16">
-                    <AvatarImage src={friend.avatar} alt={friend.name} />
-                    <AvatarFallback className="bg-gradient-to-br from-primary to-primary/60 text-white text-xl font-bold">
-                      {friend.name.charAt(0)}
-                    </AvatarFallback>
-                  </Avatar>
+                  <a 
+                    href={friend.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cursor-pointer"
+                  >
+                    <Avatar className="w-16 h-16 hover:scale-105 transition-transform">
+                      <AvatarImage src={friend.avatar} alt={friend.name} />
+                      <AvatarFallback className="bg-gradient-to-br from-primary to-primary/60 text-white text-xl font-bold">
+                        {friend.name.charAt(0)}
+                      </AvatarFallback>
+                    </Avatar>
+                  </a>
                   <div className="flex-1 min-w-0">
-                    <CardTitle className="text-lg group-hover:text-primary transition-colors">
-                      {friend.name}
-                    </CardTitle>
+                    <a 
+                      href={friend.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="cursor-pointer"
+                    >
+                      <CardTitle className="text-lg group-hover:text-primary hover:text-primary transition-colors">
+                        {friend.name}
+                      </CardTitle>
+                    </a>
                     {friend.tags && (
                       <div className="flex flex-wrap gap-1 mt-2">
                         {friend.tags.slice(0, 2).map((tag, index) => (
