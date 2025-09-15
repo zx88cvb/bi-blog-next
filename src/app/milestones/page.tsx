@@ -1,9 +1,37 @@
+import type { Metadata } from 'next'
 import { Calendar, Trophy, Star, Code, BookOpen, Users, Briefcase, Presentation } from 'lucide-react'
 import { getMilestonesData } from '@/lib/data'
 import { formatDate } from '@/lib/utils'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
+
+export const metadata: Metadata = {
+  title: '成长里程碑 - Bi Blog | 技术发展历程与职业成长记录',
+  description: '记录个人技术成长历程、项目里程碑、学习成就与职业发展的重要节点时间线',
+  openGraph: {
+    title: '成长里程碑 - Bi Blog | 技术发展历程与职业成长记录',
+    description: '记录个人技术成长历程、项目里程碑、学习成就与职业发展的重要节点时间线',
+    type: 'website',
+    url: '/milestones',
+    siteName: 'Bi Blog',
+    locale: 'zh_CN',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Bi Blog - 成长里程碑',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '成长里程碑 - Bi Blog | 技术发展历程与职业成长记录',
+    description: '记录个人技术成长历程、项目里程碑、学习成就与职业发展的重要节点时间线',
+    images: ['/logo.png'],
+  },
+}
 
 const getIcon = (type: string) => {
   switch (type) {

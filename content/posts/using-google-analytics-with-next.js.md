@@ -40,18 +40,18 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 
 项目部署到生产环境后进去页面，通过F12查看
 
-![](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/304e336682e14e589be66642a709585a~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAgQmk=:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiODUyODc2NzU2Mjc0NzQ5In0%3D&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1756259038&x-orig-sign=l5w3Nzxj74yOG6VXTOJwLevgRdM%3D)
+![浏览器开发者工具显示Google Analytics代码](https://r2.haydenbi.com/post/google-analytics-f12.png)
 
 如果有图中的代码则表示Google Analytics代码已经成功加入到项目中，一般这段代码会在最末尾
 
 ## 3.2. 登录Google Analytics查看是否有访问数据
 
-![](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/0c94c13591f64f51929df7f57fd01cf0~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAgQmk=:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiODUyODc2NzU2Mjc0NzQ5In0%3D&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1756259038&x-orig-sign=bCZU04mEmRaFrLyR1gDNN1R%2BFTw%3D)
+![Google Analytics控制台显示过去30分钟活跃用户数据](https://r2.haydenbi.com/post/google-analytics-console.png)
 
 如图所示,刚刚访问过后会在**过去 30 分钟的活跃用户数** 中显示数据
 
 也可以通过左侧菜单的实时概览进行查看
 
-![](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/30fb6b9f0cfa40739352a8398a004a96~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAgQmk=:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiODUyODc2NzU2Mjc0NzQ5In0%3D&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1756259038&x-orig-sign=ZHC9CM5dZXMH2LVWeYuKDCOcQ8E%3D)
+![Google Analytics实时概览页面显示访问数据](https://r2.haydenbi.com/post/google-analytics-real-time.png)
 
 好了,以上就是NextJS接入Google Analytics接入的全过程，希望对你有所帮助

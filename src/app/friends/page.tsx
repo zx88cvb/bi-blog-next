@@ -1,9 +1,37 @@
+import type { Metadata } from 'next'
 import { ExternalLink, Users, Globe } from 'lucide-react'
 import { getFriendsData } from '@/lib/data'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+
+export const metadata: Metadata = {
+  title: '友情链接 - Bi Blog | 技术博主与开发者友链交换',
+  description: '与优秀的技术博主建立友情链接，分享技术资源与经验交流，欢迎技术类博客申请友链',
+  openGraph: {
+    title: '友情链接 - Bi Blog | 技术博主与开发者友链交换',
+    description: '与优秀的技术博主建立友情链接，分享技术资源与经验交流，欢迎技术类博客申请友链',
+    type: 'website',
+    url: '/friends',
+    siteName: 'Bi Blog',
+    locale: 'zh_CN',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Bi Blog - 友情链接',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '友情链接 - Bi Blog | 技术博主与开发者友链交换',
+    description: '与优秀的技术博主建立友情链接，分享技术资源与经验交流，欢迎技术类博客申请友链',
+    images: ['/logo.png'],
+  },
+}
 
 export default function FriendsPage() {
   const { friends } = getFriendsData()

@@ -8,8 +8,8 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
-  title: "Bi Blog - 个人博客",
-  description: "分享技术见解，记录成长历程，探索未知领域",
+  title: "Bi Blog - 技术博客 | 全栈开发者的技术分享与项目实践",
+  description: "分享前端、后端、全栈开发技术见解，记录项目实践与成长历程，探索独立开发与出海产品经验",
   keywords: ["博客", "技术", "前端", "开发", "后端", "全栈", "出海"],
   authors: [{ name: "Bi" }],
   creator: "Bi",
@@ -24,12 +24,35 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  openGraph: {
+    type: 'website',
+    locale: 'zh_CN',
+    url: '/',
+    siteName: 'Bi Blog',
+    title: 'Bi Blog - 技术博客 | 全栈开发者的技术分享与项目实践',
+    description: '分享前端、后端、全栈开发技术见解，记录项目实践与成长历程，探索独立开发与出海产品经验',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Bi Blog - 全栈开发者技术博客',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Bi Blog - 技术博客 | 全栈开发者的技术分享与项目实践',
+    description: '分享前端、后端、全栈开发技术见解，记录项目实践与成长历程，探索独立开发与出海产品经验',
+    creator: '@HaydenBi',
+    images: ['/logo.png'],
+  },
   alternates: {
     types: {
       'application/rss+xml': [
         {
           title: 'Bi Blog RSS Feed',
-          url: '/api/feed',
+          url: '/feed.xml',
         },
       ],
     },

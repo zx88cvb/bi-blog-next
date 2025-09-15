@@ -1,8 +1,36 @@
+import type { Metadata } from 'next'
 import { Github, Twitter, Mail, MapPin } from 'lucide-react'
 import { getAboutData } from '@/lib/data'
 import { Card, CardContent } from '@/components/ui/card'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
+
+export const metadata: Metadata = {
+  title: '关于我 - Bi Blog | 全栈开发者个人简介与联系方式',
+  description: '了解全栈开发者Bi的技术背景、工作经历、技能专长与联系方式，欢迎技术交流与合作',
+  openGraph: {
+    title: '关于我 - Bi Blog | 全栈开发者个人简介与联系方式',
+    description: '了解全栈开发者Bi的技术背景、工作经历、技能专长与联系方式，欢迎技术交流与合作',
+    type: 'profile',
+    url: '/about',
+    siteName: 'Bi Blog',
+    locale: 'zh_CN',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Bi Blog - 关于我',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '关于我 - Bi Blog | 全栈开发者个人简介与联系方式',
+    description: '了解全栈开发者Bi的技术背景、工作经历、技能专长与联系方式，欢迎技术交流与合作',
+    images: ['/logo.png'],
+  },
+}
 
 export default function AboutPage() {
   const aboutData = getAboutData()
