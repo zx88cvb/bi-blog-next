@@ -91,6 +91,10 @@ export default function RootLayout({
 
   return (
     <html lang="zh-CN" suppressHydrationWarning>
+      <head>
+        {/* IndexNow  */}
+        <meta name="IndexNow" content="963011ef5f7746e2b680d9492f292702" />
+      </head>
       <body className="font-sans">
         {/* Google Analytics */}
         {gaId && <GoogleAnalytics gaId={gaId} />}

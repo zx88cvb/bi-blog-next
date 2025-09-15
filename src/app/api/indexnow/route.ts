@@ -1,21 +1,36 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { getAllPostSlugs } from '@/lib/posts';
 
 const INDEXNOW_KEY = '963011ef5f7746e2b680d9492f292702';
 const BASE_URL = 'https://haydenbi.com';
 
 
 // Generate all URLs that need to be indexed
-function generateUrls(): string[] {
+async function generateUrls(): Promise<string[]> {
   const urls: string[] = [];
-  
+
   // Add base URL
   urls.push(BASE_URL);
-  
-  // Add English pages without locale prefix
-  urls.push(`${BASE_URL}/how-to-use`);
-  urls.push(`${BASE_URL}/privacy-policy`);
-  urls.push(`${BASE_URL}/terms-of-service`);
-  
+
+  // Add main pages
+  urls.push(`${BASE_URL}/posts`);
+  urls.push(`${BASE_URL}/about`);
+  urls.push(`${BASE_URL}/friends`);
+  urls.push(`${BASE_URL}/milestones`);
+
+  // Dynamically get all blog posts
+  try {
+    const postSlugs = await getAllPostSlugs();
+    postSlugs.forEach(slug => {
+      urls.push(`${BASE_URL}/posts/${slug}`);
+    });
+  } catch (error) {
+    console.error('Error fetching post slugs:', error);
+  }
+
+  // Add RSS feed
+  urls.push(`${BASE_URL}/feed.xml`);
+
   return [...new Set(urls)]; // Remove duplicates
 }
 
@@ -56,8 +71,8 @@ function chunkArray<T>(array: T[], size: number): T[][] {
 
 export async function GET() {
   try {
-    const urls = generateUrls();
-    
+    const urls = await generateUrls();
+
     return NextResponse.json({
       totalUrls: urls.length,
       urls: urls,
@@ -84,7 +99,7 @@ export async function POST(request: NextRequest) {
       );
     }
     
-    const urls = generateUrls();
+    const urls = await generateUrls();
     const batches = chunkArray(urls, 100); // Submit in batches of 100
     const results = [];
     let successfulBatches = 0;

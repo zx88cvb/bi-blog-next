@@ -9,9 +9,9 @@ import { Separator } from '@/components/ui/separator'
 import { TypewriterText } from '@/components/typewriter-text'
 
 export default async function Home() {
-  // 获取最新的3篇文章
+  // 获取最新的5篇文章
   const allPosts = await getAllPosts()
-  const recentPosts = allPosts.slice(0, 3).map(post => ({
+  const recentPosts = allPosts.slice(0, 5).map(post => ({
     id: post.slug,
     title: post.title,
     excerpt: post.excerpt,
