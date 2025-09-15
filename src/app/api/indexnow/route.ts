@@ -64,6 +64,7 @@ export async function GET() {
       keyLocation: `${BASE_URL}/${INDEXNOW_KEY}.txt`
     });
   } catch (error) {
+    console.error('Failed to generate URLs:', error);
     return NextResponse.json(
       { error: 'Failed to generate URLs' },
       { status: 500 }
@@ -114,6 +115,7 @@ export async function POST(request: NextRequest) {
     });
     
   } catch (error) {
+    console.error('Failed to submit to IndexNow:', error);
     return NextResponse.json(
       { error: 'Failed to submit to IndexNow' },
       { status: 500 }
