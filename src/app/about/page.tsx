@@ -8,6 +8,10 @@ import { Button } from '@/components/ui/button'
 export const metadata: Metadata = {
   title: '关于我 - Bi Blog | 全栈开发者个人简介与联系方式',
   description: '了解全栈开发者Bi的技术背景、工作经历、技能专长与联系方式，欢迎技术交流与合作',
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: '关于我 - Bi Blog | 全栈开发者个人简介与联系方式',
     description: '了解全栈开发者Bi的技术背景、工作经历、技能专长与联系方式，欢迎技术交流与合作',

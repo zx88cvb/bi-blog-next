@@ -4,7 +4,7 @@
         <title>Bi's Blog</title>
         <link>localhost:3000</link>
         <description>个人博客，分享技术与生活</description>
-        <lastBuildDate>Wed, 17 Sep 2025 01:12:04 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 17 Sep 2025 01:26:58 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Next.js</generator>
         <language>zh-CN</language>
@@ -34,6 +34,7 @@
             <category>IOS</category>
             <category>苹果</category>
             <category>VPN</category>
+            <category>Clash</category>
         </item>
         <item>
             <title><![CDATA[Dokploy安装和部署项目流程]]></title>

@@ -9,6 +9,10 @@ import { Separator } from '@/components/ui/separator'
 export const metadata: Metadata = {
   title: '成长里程碑 - Bi Blog | 技术发展历程与职业成长记录',
   description: '记录个人技术成长历程、项目里程碑、学习成就与职业发展的重要节点时间线',
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: '成长里程碑 - Bi Blog | 技术发展历程与职业成长记录',
     description: '记录个人技术成长历程、项目里程碑、学习成就与职业发展的重要节点时间线',

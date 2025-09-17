@@ -27,6 +27,10 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
     return {
       title: '文章未找到',
       description: '您要查找的文章不存在',
+      robots: {
+        index: false,
+        follow: false,
+      },
     }
   }
 
@@ -39,6 +43,10 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
     description: post.excerpt,
     keywords: post.tags.join(', '),
     authors: [{ name: post.author }],
+    robots: {
+      index: true,
+      follow: true,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
