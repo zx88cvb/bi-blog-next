@@ -15,9 +15,9 @@ export const metadata: Metadata = {
   creator: "Bi",
   publisher: "Bi",
   icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
-    apple: "/logo.png",
+    icon: "https://r2.haydenbi.com/logo/logo.png",
+    shortcut: "https://r2.haydenbi.com/logo/logo.png",
+    apple: "https://r2.haydenbi.com/logo/logo.png",
   },
   formatDetection: {
     email: false,
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
     description: '分享前端、后端、全栈开发技术见解，记录项目实践与成长历程，探索独立开发与出海产品经验',
     images: [
       {
-        url: '/logo.png',
-        width: 1200,
-        height: 630,
+        url: 'https://r2.haydenbi.com/logo/logo.png',
+        width: 548,
+        height: 698,
         alt: 'Bi Blog - 全栈开发者技术博客',
       },
     ],
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: 'Bi Blog - 技术博客 | 全栈开发者的技术分享与项目实践',
     description: '分享前端、后端、全栈开发技术见解，记录项目实践与成长历程，探索独立开发与出海产品经验',
     creator: '@HaydenBi',
-    images: ['/logo.png'],
+    images: ['https://r2.haydenbi.com/logo/logo.png'],
   },
   alternates: {
     types: {

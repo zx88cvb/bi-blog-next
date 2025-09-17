@@ -17,9 +17,9 @@ export const metadata: Metadata = {
     locale: 'zh_CN',
     images: [
       {
-        url: '/logo.png',
-        width: 1200,
-        height: 630,
+        url: 'https://r2.haydenbi.com/logo/logo.png',
+        width: 548,
+        height: 698,
         alt: 'Bi Blog - 关于我',
       },
     ],
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '关于我 - Bi Blog | 全栈开发者个人简介与联系方式',
     description: '了解全栈开发者Bi的技术背景、工作经历、技能专长与联系方式，欢迎技术交流与合作',
-    images: ['/logo.png'],
+    images: ['https://r2.haydenbi.com/logo/logo.png'],
   },
 }
 

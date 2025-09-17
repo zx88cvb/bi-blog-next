@@ -18,9 +18,9 @@ export const metadata: Metadata = {
     locale: 'zh_CN',
     images: [
       {
-        url: '/logo.png',
-        width: 1200,
-        height: 630,
+        url: 'https://r2.haydenbi.com/logo/logo.png',
+        width: 548,
+        height: 698,
         alt: 'Bi Blog - 成长里程碑',
       },
     ],
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '成长里程碑 - Bi Blog | 技术发展历程与职业成长记录',
     description: '记录个人技术成长历程、项目里程碑、学习成就与职业发展的重要节点时间线',
-    images: ['/logo.png'],
+    images: ['https://r2.haydenbi.com/logo/logo.png'],
   },
 }
 

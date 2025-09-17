@@ -18,9 +18,9 @@ export const metadata: Metadata = {
     locale: 'zh_CN',
     images: [
       {
-        url: '/logo.png',
-        width: 1200,
-        height: 630,
+        url: 'https://r2.haydenbi.com/logo/logo.png',
+        width: 548,
+        height: 698,
         alt: 'Bi Blog - 友情链接',
       },
     ],
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '友情链接 - Bi Blog | 技术博主与开发者友链交换',
     description: '与优秀的技术博主建立友情链接，分享技术资源与经验交流，欢迎技术类博客申请友链',
-    images: ['/logo.png'],
+    images: ['https://r2.haydenbi.com/logo/logo.png'],
   },
 }
 

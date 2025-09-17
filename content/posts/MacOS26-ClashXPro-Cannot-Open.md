@@ -2,7 +2,7 @@
 title: "升级MacOS26无法打开ClashX Pro解决办法"
 date: "2025-09-17"
 excerpt: "使用MacOS26系统打开ClashX Pro出现 You origin config has been renamed解决办法"
-tags: ["Mac", "IOS", "苹果", "VPN"]
+tags: ["Mac", "IOS", "苹果", "VPN", "Clash"]
 author: "Bi"
 ---
 # 升级MacOS26版本打开ClashX pro报错提示

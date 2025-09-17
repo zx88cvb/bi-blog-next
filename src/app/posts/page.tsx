@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     locale: 'zh_CN',
     images: [
       {
-        url: '/logo.png',
-        width: 1200,
-        height: 630,
+        url: 'https://r2.haydenbi.com/logo/logo.png',
+        width: 548,
+        height: 698,
         alt: 'Bi Blog - 技术文章列表',
       },
     ],
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '技术文章列表 - Bi Blog | 前端后端全栈开发经验分享',
     description: '浏览全部技术文章，涵盖前端开发、后端架构、全栈项目、编程技巧与独立开发经验分享',
-    images: ['/logo.png'],
+    images: ['https://r2.haydenbi.com/logo/logo.png'],
   },
 }
 
