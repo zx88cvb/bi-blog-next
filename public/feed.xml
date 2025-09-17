@@ -4,7 +4,7 @@
         <title>Bi's Blog</title>
         <link>localhost:3000</link>
         <description>个人博客，分享技术与生活</description>
-        <lastBuildDate>Wed, 10 Sep 2025 11:45:21 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 17 Sep 2025 01:12:04 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Next.js</generator>
         <language>zh-CN</language>
@@ -14,6 +14,27 @@
             <link>localhost:3000</link>
         </image>
         <copyright>All rights reserved 2025, Bi</copyright>
+        <item>
+            <title><![CDATA[升级MacOS26无法打开ClashX Pro解决办法]]></title>
+            <link>localhost:3000/posts/MacOS26-ClashXPro-Cannot-Open</link>
+            <guid isPermaLink="false">localhost:3000/posts/MacOS26-ClashXPro-Cannot-Open</guid>
+            <pubDate>Wed, 17 Sep 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[使用MacOS26系统打开ClashX Pro出现 You origin config has been renamed解决办法]]></description>
+            <content:encoded><![CDATA[<h1>升级MacOS26版本打开ClashX pro报错提示</h1>
+<p>使用MacOS26系统打开ClashX Pro出现 You origin config has been renamed</p>
+<h1>解决方法</h1>
+<p>只用重装ClashX Pro即可解决, 因为原作者的仓库已经删了，这里是我之前备份的安装包</p>
+<p>下面是ClashX和ClashX Pro的安装链接(这里是M芯片的安装包)</p>
+<ul>
+<li>ClashX:<a href="https://r2.haydenbi.com/files/package/ClashX.dmg">ClashX Download</a></li>
+<li>ClashX Pro:<a href="https://r2.haydenbi.com/files/package/ClashXPro.dmg">ClashX Pro Download</a></li>
+</ul>]]></content:encoded>
+            <author>zx88cvb@gmail.com (Bi)</author>
+            <category>Mac</category>
+            <category>IOS</category>
+            <category>苹果</category>
+            <category>VPN</category>
+        </item>
         <item>
             <title><![CDATA[Dokploy安装和部署项目流程]]></title>
             <link>localhost:3000/posts/Dokploy-install-deploy</link>
@@ -51,7 +72,7 @@
 <h1>安装Dokploy</h1>
 <p>Dokploy有两种使用模式：云版本，开源版本</p>
 <p>使用云版本每个月会有一定的费用，而开源版本是完全免费的 收费模式如下图</p>
-<p><img src="https://r2.haydenbi.com/post/1757491869182-ce73125a-2bcf-402d-9e7f-2053df9a0307.png" alt=""></p>
+<p><img src="https://r2.haydenbi.com/post/1757491869182-ce73125a-2bcf-402d-9e7f-2053df9a0307.png" alt="Dokploy收费模式图"></p>
 <p>本篇介绍的是在服务器上安装的开源版本</p>
 <p>我的服务器的发行版是Debian 12 其他Linux发行版安装同理</p>
 <p>安装使用官方提供的命令</p>
@@ -62,24 +83,24 @@
 <p><font style="color:#DF2A3F;">我安装时因为服务器上有Nginx运行所以提示80端口被占用，把Nginx关掉就可以安装了</font></p>
 <p>安装成功后可以通过 你的服务器公网<a href="http://IP:3000">http://IP:3000</a> 比如<a href="http://123:456:789:123:3000">http://123:456:789:123:3000</a><font style="color:#DF2A3F;">(需要设置服务器的3000端口开放才可以访问)</font></p>
 <p><font style="color:#DF2A3F;"></font></p>
-<p><img src="https://r2.haydenbi.com/post/1757491213684-e51efb9e-4474-44ed-840b-b66e00bf5c39.png" alt=""></p>
+<p><img src="https://r2.haydenbi.com/post/1757491213684-e51efb9e-4474-44ed-840b-b66e00bf5c39.png" alt="Dokploy注册页面"></p>
 <p>进入图中页面可以注册你的账号密码</p>
 <h1>部署第一个项目</h1>
 <p>这里我使用NextJS项目为例来部署一个项目</p>
-<p><img src="https://r2.haydenbi.com/post/aa057a46-32ad-4cea-accd-839edfc7f845.png" alt=""></p>
+<p><img src="https://r2.haydenbi.com/post/aa057a46-32ad-4cea-accd-839edfc7f845.png" alt="Dokploy控制台主页面"></p>
 <p>登录到主页面后可以看到Dokploy的控制台</p>
 <h2>新建Project</h2>
 <p>选择左侧菜单的Projects-> 点击右侧的Create Project</p>
-<p><img src="https://r2.haydenbi.com/post/1757492233682-20797c34-f19f-4a27-a3dc-97b996059d8b.png" alt=""></p>
+<p><img src="https://r2.haydenbi.com/post/1757492233682-20797c34-f19f-4a27-a3dc-97b996059d8b.png" alt="创建新项目页面"></p>
 <p>输入项目名称和描述信息</p>
 <p>点击Create</p>
 <h2>新建Service</h2>
 <p>点击进入刚刚创建的Project可以看到这个页面是Service服务页面</p>
 <p>Service是Project下面的服务，可以理解成真正意义上你的单独的项目</p>
-<p><img src="https://r2.haydenbi.com/post/1757492393834-2b13e187-4ad6-4a91-9a38-e6b0daaa39de.png" alt=""></p>
+<p><img src="https://r2.haydenbi.com/post/1757492393834-2b13e187-4ad6-4a91-9a38-e6b0daaa39de.png" alt="Service服务页面"></p>
 <p>点击右侧的Create Service -> 选择Application->填写你的项目名称等信息</p>
 <h2>配置关联Git项目仓库</h2>
-<p><img src="https://r2.haydenbi.com/post/997e07bb-1ce4-4b9b-936d-d04ce5f21bfc.png" alt=""></p>
+<p><img src="https://r2.haydenbi.com/post/997e07bb-1ce4-4b9b-936d-d04ce5f21bfc.png" alt="配置Git仓库页面"></p>
 <p>点击刚刚创建的Service会进入到如图所示的页面</p>
 <ol>
 <li>首先在General下看到Provider这一栏</li>
@@ -88,10 +109,10 @@
 <li>Repository仓库可以看到你Github上所有的项目，这时选择你需要部署的项目</li>
 <li>下面的Branch 、Build Path等配置不变按照默认的来</li>
 </ol>
-<p><img src="https://r2.haydenbi.com/post/1757493061897-e9fcd829-d6f6-4be6-a154-eb213127d026.png" alt=""></p>
+<p><img src="https://r2.haydenbi.com/post/1757493061897-e9fcd829-d6f6-4be6-a154-eb213127d026.png" alt="Git仓库配置保存提示"></p>
 <p>最后点击Save保存 记住一定得点一下，下一步配置Build时如果没保存会把刚刚的配置清空掉</p>
 <h2>配置Build</h2>
-<p><img src="https://r2.haydenbi.com/post/1757493174100-3fdc2a3b-be6b-46e6-84a4-e2483a3b7133.png" alt=""></p>
+<p><img src="https://r2.haydenbi.com/post/1757493174100-3fdc2a3b-be6b-46e6-84a4-e2483a3b7133.png" alt="Build构建配置页面"></p>
 <p>页面接着往下滑会看到Build Type设置。</p>
 <ol>
 <li>Build Type选择 Dockerfile</li>
@@ -147,12 +168,12 @@
 </span></code></pre>
 <p>最后点击save保存</p>
 <h2>设置环境变量</h2>
-<p><img src="https://r2.haydenbi.com/post/1757493604873-0b8ff1f8-919f-4e51-bbe9-cc9ef7e5eeb8.png" alt=""></p>
+<p><img src="https://r2.haydenbi.com/post/1757493604873-0b8ff1f8-919f-4e51-bbe9-cc9ef7e5eeb8.png" alt="环境变量配置页面"></p>
 <p>点击菜单上面的Environment可以看到如上图的页面</p>
 <p>在Environment Settings 这一栏点开右边的眼睛图标就可以添加你项目中的.env配置文件</p>
 <p>最后点击最下面的Save保存</p>
 <h2>部署</h2>
-<p><img src="https://r2.haydenbi.com/post/1757493836315-8d927632-47a3-4900-85e8-ba9ab9705ebc.png" alt=""></p>
+<p><img src="https://r2.haydenbi.com/post/1757493836315-8d927632-47a3-4900-85e8-ba9ab9705ebc.png" alt="部署按钮页面"></p>
 <p>回到General菜单，点击Deploy部署按钮即可</p>
 <p>这时选择Deployments菜单可以看到部署时的情况日志</p>
 <p>当部署成功之后点击最右侧的Logs菜单查看项目的日志</p>
@@ -160,28 +181,28 @@
 <h2>配置DNS</h2>
 <p>这里我以cloudflare为例</p>
 <p>把域名指向你服务器的公网IP</p>
-<p><img src="https://r2.haydenbi.com/post/1757494396551-d01272f7-f518-408d-b526-86bbdf5e31c9.png" alt=""></p>
+<p><img src="https://r2.haydenbi.com/post/1757494396551-d01272f7-f518-408d-b526-86bbdf5e31c9.png" alt="Cloudflare DNS配置页面"></p>
 <p>Type: A</p>
 <p>name:域名.com</p>
 <p>conent: 服务器的公网IP</p>
 <p>如果需要配置www前缀 可以参考CNAME那一栏的配置</p>
 <h2>配置域名和SSL证书</h2>
-<p><img src="https://r2.haydenbi.com/post/1757493997311-75daa751-d17d-49a6-b660-34d5d7274b58.png" alt=""></p>
+<p><img src="https://r2.haydenbi.com/post/1757493997311-75daa751-d17d-49a6-b660-34d5d7274b58.png" alt="Dokploy域名配置页面"></p>
 <p>选择Domains这栏->点击Add Domain</p>
-<p><img src="https://r2.haydenbi.com/post/1757494054323-6449c70f-e2fa-4bf6-9c6c-176b150f80de.png" alt=""></p>
+<p><img src="https://r2.haydenbi.com/post/1757494054323-6449c70f-e2fa-4bf6-9c6c-176b150f80de.png" alt="添加域名配置详情"></p>
 <p>可以参考我的配置，把Host换成你的域名</p>
 <p>Container Port是Dockerfile里写的容器内端口，这里我是3000</p>
 <p>配置完成后通过域名就可以访问到你当前的项目了</p>
 <h2>www前缀域名转发到一级主域名</h2>
 <p>我所使用的版本Dokploy 0.25.1目前没有找到可视化的配置方法。有人说在左侧菜单Traefik File System中可以配置，这个我没有试过 主要对Traefik不太熟悉</p>
 <p>目前的办法是通过Cloudflare进行转发</p>
-<p><img src="https://r2.haydenbi.com/post/1757494937335-50f5b867-6a75-4f0d-aa22-cf2e2cb23932.png" alt=""></p>
+<p><img src="https://r2.haydenbi.com/post/1757494937335-50f5b867-6a75-4f0d-aa22-cf2e2cb23932.png" alt="Cloudflare页面规则配置"></p>
 <p>Cloudflare左侧菜单 Rules->Page Rules->点击Create Page Rule</p>
-<p><img src="https://r2.haydenbi.com/post/1757494986158-1f9e25ef-9ef0-4e98-ba98-7f7353ae59af.png" alt=""></p>
+<p><img src="https://r2.haydenbi.com/post/1757494986158-1f9e25ef-9ef0-4e98-ba98-7f7353ae59af.png" alt="www域名重定向规则配置"></p>
 <p>具体配置可以参考我的配置，把域名换成你自己的即可</p>
 <p>目前为止项目配置到此结束，通过域名和www域名转发到主域名都可以访问了！</p>
 <h1>给Dokploy添加域名(可选)</h1>
-<p><img src="https://r2.haydenbi.com/post/1757495171453-4fefa141-d696-4e1a-b254-00b08c6d6c23.png" alt=""></p>
+<p><img src="https://r2.haydenbi.com/post/1757495171453-4fefa141-d696-4e1a-b254-00b08c6d6c23.png" alt="Dokploy Web Server配置页面"></p>
 <p><font style="color:#DF2A3F;">配置之前记得设置DNS把域名映射到服务器的IP上，和上面4.1配置DNS步骤一样</font></p>
 <p>如果想通过域名访问dokploy页面可以点击菜单左侧Web Server</p>
 <p>Domain输入你的未使用域名(二级域名也可以)</p>
@@ -345,13 +366,13 @@
 <h1>3. 检查接入是否成功</h1>
 <h2>3.1. 通过F12查看</h2>
 <p>项目部署到生产环境后进去页面，通过F12查看</p>
-<p><img src="https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/304e336682e14e589be66642a709585a~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAgQmk=:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiODUyODc2NzU2Mjc0NzQ5In0%3D&#x26;rk3s=f64ab15b&#x26;x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&#x26;x-orig-expires=1756259038&#x26;x-orig-sign=l5w3Nzxj74yOG6VXTOJwLevgRdM%3D" alt=""></p>
+<p><img src="https://r2.haydenbi.com/post/google-analytics-f12.png" alt="浏览器开发者工具显示Google Analytics代码"></p>
 <p>如果有图中的代码则表示Google Analytics代码已经成功加入到项目中，一般这段代码会在最末尾</p>
 <h2>3.2. 登录Google Analytics查看是否有访问数据</h2>
-<p><img src="https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/0c94c13591f64f51929df7f57fd01cf0~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAgQmk=:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiODUyODc2NzU2Mjc0NzQ5In0%3D&#x26;rk3s=f64ab15b&#x26;x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&#x26;x-orig-expires=1756259038&#x26;x-orig-sign=bCZU04mEmRaFrLyR1gDNN1R%2BFTw%3D" alt=""></p>
+<p><img src="https://r2.haydenbi.com/post/google-analytics-console.png" alt="Google Analytics控制台显示过去30分钟活跃用户数据"></p>
 <p>如图所示,刚刚访问过后会在<strong>过去 30 分钟的活跃用户数</strong> 中显示数据</p>
 <p>也可以通过左侧菜单的实时概览进行查看</p>
-<p><img src="https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/30fb6b9f0cfa40739352a8398a004a96~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAgQmk=:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiODUyODc2NzU2Mjc0NzQ5In0%3D&#x26;rk3s=f64ab15b&#x26;x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&#x26;x-orig-expires=1756259038&#x26;x-orig-sign=ZHC9CM5dZXMH2LVWeYuKDCOcQ8E%3D" alt=""></p>
+<p><img src="https://r2.haydenbi.com/post/google-analytics-real-time.png" alt="Google Analytics实时概览页面显示访问数据"></p>
 <p>好了,以上就是NextJS接入Google Analytics接入的全过程，希望对你有所帮助</p>]]></content:encoded>
             <author>zx88cvb@gmail.com (Bi)</author>
             <category>Next.js</category>
@@ -423,7 +444,7 @@
 <p>参考官方回复:<a href="https://github.com/spring-projects/spring-ai/issues/3369">https://github.com/spring-projects/spring-ai/issues/3369</a>
 <a href="https://github.com/spring-projects/spring-ai/pull/3372">https://github.com/spring-projects/spring-ai/pull/3372</a></p>
 <p>出现问题的源码如下图
-<img src="https://p9-xtjj-sign.byteimg.com/tos-cn-i-73owjymdk6/4ca8551f7eea4044bec067f783246d5c~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAgQmk=:q75.awebp?rk3s=f64ab15b&#x26;x-expires=1756698583&#x26;x-signature=%2Bgs2GMjVUqCFCPHChP6CW6yXS3s%3D" alt=""></p>
+<img src="https://r2.haydenbi.com/post/SpringAI-ollama-nullPointExpection.jpeg" alt="Spring AI OllamaChatModel源码中的evalDuration空指针问题"></p>
 <h3>解决方法</h3>
 <p>这个时候我们要重写OllamaChatModel，重写的方式就是新建一个OllamaAlibabaChatModel类。如下代码</p>
 <pre class="language-java"><code class="language-java code-highlight"><span class="code-line"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>bi<span class="token punctuation">.</span>demoai<span class="token punctuation">.</span>model</span><span class="token punctuation">;</span>
@@ -978,7 +999,7 @@
 </span><span class="code-line"><span class="token punctuation">}</span>
 </span></code></pre>
 <p>上面这段代码其实大部分是把OllamaChatModel的类复制过来，只修改了关键部分
-<img src="https://p9-xtjj-sign.byteimg.com/tos-cn-i-73owjymdk6/4ca8551f7eea4044bec067f783246d5c~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAgQmk=:q75.awebp?rk3s=f64ab15b&#x26;x-expires=1756698583&#x26;x-signature=%2Bgs2GMjVUqCFCPHChP6CW6yXS3s%3D" alt="">
+<img src="https://r2.haydenbi.com/post/SpringAI-ollama-nullPointExpection.jpeg" alt="修改后的OllamaAlibabaChatModel关键代码部分">
 把图片中if语句中的代码替换成如下代码即可</p>
 <pre class="language-java"><code class="language-java code-highlight"><span class="code-line"><span class="token keyword">if</span> <span class="token punctuation">(</span>previousChatResponse <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&#x26;&#x26;</span> previousChatResponse<span class="token punctuation">.</span><span class="token function">getMetadata</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 </span><span class="code-line">            <span class="token class-name">Object</span> metadataEvalDuration <span class="token operator">=</span> previousChatResponse<span class="token punctuation">.</span><span class="token function">getMetadata</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token constant">METADATA_EVAL_DURATION</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
