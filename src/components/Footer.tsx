@@ -32,7 +32,7 @@ export default function Footer() {
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="text-2xl font-bold text-foreground hover:text-primary transition-colors">
-              Bi Blog
+              HaydenBi
             </Link>
             <p className="mt-4 text-sm text-muted-foreground max-w-md">
               分享技术见解，记录成长历程，探索未知领域。让我们一起在技术的道路上前行。
@@ -89,7 +89,7 @@ export default function Footer() {
         <div className="mt-8 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground">
-              © 2025 Bi Blog. All rights reserved.
+              © 2025 HaydenBi Blog. All rights reserved.
             </p>
             <p className="text-sm text-muted-foreground mt-2 md:mt-0 flex items-center">
               Made with <Heart className="h-4 w-4 mx-1 text-red-500" /> using Next.js

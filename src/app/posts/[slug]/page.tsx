@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   const imageUrl = `${baseUrl}/logo.png`
 
   return {
-    title: `${post.title} | Bi Blog`,
+    title: `${post.title} | HaydenBi`,
     description: post.excerpt,
     keywords: post.tags.join(', '),
     authors: [{ name: post.author }],
@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       title: post.title,
       description: post.excerpt,
       url: postUrl,
-      siteName: 'Bi Blog',
+      siteName: 'HaydenBi',
       locale: 'zh_CN',
       type: 'article',
       publishedTime: post.date,
@@ -152,7 +152,7 @@ export default async function PostPage({ params }: PostPageProps) {
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Bi Blog',
+      name: 'HaydenBi',
       logo: {
         '@type': 'ImageObject',
         url: `${baseUrl}/logo.png`,

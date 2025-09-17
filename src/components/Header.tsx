@@ -44,7 +44,7 @@ export default function Header() {
             >
               <Image
                 src="/logo.png"
-                alt="Bi Blog Logo"
+                alt="HaydenBi Logo"
                 width={32}
                 height={32}
                 className="w-8 h-8"

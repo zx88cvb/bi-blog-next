@@ -7,32 +7,32 @@ import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 export const metadata: Metadata = {
-  title: '友情链接 - Bi Blog | 技术博主与开发者友链交换',
-  description: '与优秀的技术博主建立友情链接，分享技术资源与经验交流，欢迎技术类博客申请友链',
+  title: '友情链接 | HaydenBi',
+  description: '与各位博主建立友情链接，分享技术资源与经验交流，欢迎大家申请友链',
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: '友情链接 - Bi Blog | 技术博主与开发者友链交换',
-    description: '与优秀的技术博主建立友情链接，分享技术资源与经验交流，欢迎技术类博客申请友链',
+    title: '友情链接 | HaydenBi',
+    description: '与各位博主建立友情链接，分享技术资源与经验交流，欢迎大家申请友链',
     type: 'website',
     url: '/friends',
-    siteName: 'Bi Blog',
+    siteName: 'HaydenBi',
     locale: 'zh_CN',
     images: [
       {
         url: 'https://r2.haydenbi.com/logo/logo.png',
         width: 548,
         height: 698,
-        alt: 'Bi Blog - 友情链接',
+        alt: 'HaydenBi - 友情链接',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '友情链接 - Bi Blog | 技术博主与开发者友链交换',
-    description: '与优秀的技术博主建立友情链接，分享技术资源与经验交流，欢迎技术类博客申请友链',
+    title: '友情链接 | HaydenBi',
+    description: '与各位博主建立友情链接，分享技术资源与经验交流，欢迎大家申请友链',
     images: ['https://r2.haydenbi.com/logo/logo.png'],
   },
 }

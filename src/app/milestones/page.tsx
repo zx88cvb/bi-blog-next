@@ -7,31 +7,31 @@ import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 
 export const metadata: Metadata = {
-  title: '成长里程碑 - Bi Blog | 技术发展历程与职业成长记录',
+  title: '成长里程碑 | HaydenBi',
   description: '记录个人技术成长历程、项目里程碑、学习成就与职业发展的重要节点时间线',
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: '成长里程碑 - Bi Blog | 技术发展历程与职业成长记录',
+    title: '成长里程碑 | HaydenBi',
     description: '记录个人技术成长历程、项目里程碑、学习成就与职业发展的重要节点时间线',
     type: 'website',
     url: '/milestones',
-    siteName: 'Bi Blog',
+    siteName: 'HaydenBi',
     locale: 'zh_CN',
     images: [
       {
         url: 'https://r2.haydenbi.com/logo/logo.png',
         width: 548,
         height: 698,
-        alt: 'Bi Blog - 成长里程碑',
+        alt: 'HaydenBi - 成长里程碑',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '成长里程碑 - Bi Blog | 技术发展历程与职业成长记录',
+    title: '成长里程碑 | HaydenBi',
     description: '记录个人技术成长历程、项目里程碑、学习成就与职业发展的重要节点时间线',
     images: ['https://r2.haydenbi.com/logo/logo.png'],
   },

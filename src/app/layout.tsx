@@ -8,12 +8,12 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
-  title: "Bi Blog - 技术博客 | 全栈开发者的技术分享与项目实践",
+  title: "HaydenBi",
   description: "分享前端、后端、全栈开发技术见解，记录项目实践与成长历程，探索独立开发与出海产品经验",
   keywords: ["博客", "技术", "前端", "开发", "后端", "全栈", "出海"],
-  authors: [{ name: "Bi" }],
-  creator: "Bi",
-  publisher: "Bi",
+  authors: [{ name: "HaydenBi" }],
+  creator: "HaydenBi",
+  publisher: "HaydenBi",
   icons: {
     icon: "https://r2.haydenbi.com/logo/logo.png",
     shortcut: "https://r2.haydenbi.com/logo/logo.png",
@@ -39,21 +39,21 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'zh_CN',
     url: '/',
-    siteName: 'Bi Blog',
-    title: 'Bi Blog - 技术博客 | 全栈开发者的技术分享与项目实践',
+    siteName: 'HaydenBi',
+    title: 'HaydenBi',
     description: '分享前端、后端、全栈开发技术见解，记录项目实践与成长历程，探索独立开发与出海产品经验',
     images: [
       {
         url: 'https://r2.haydenbi.com/logo/logo.png',
         width: 548,
         height: 698,
-        alt: 'Bi Blog - 全栈开发者技术博客',
+        alt: 'HaydenBi - 博客',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Bi Blog - 技术博客 | 全栈开发者的技术分享与项目实践',
+    title: 'HaydenBi Blog',
     description: '分享前端、后端、全栈开发技术见解，记录项目实践与成长历程，探索独立开发与出海产品经验',
     creator: '@HaydenBi',
     images: ['https://r2.haydenbi.com/logo/logo.png'],
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     types: {
       'application/rss+xml': [
         {
-          title: 'Bi Blog RSS Feed',
+          title: 'HaydenBi Blog RSS Feed',
           url: '/feed.xml',
         },
       ],
@@ -82,7 +82,7 @@ export default function RootLayout({
   const websiteJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Bi Blog',
+    name: 'HaydenBi',
     description: '分享技术见解，记录成长历程，探索未知领域',
     url: baseUrl,
     author: {
@@ -92,7 +92,7 @@ export default function RootLayout({
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Bi Blog',
+      name: 'HaydenBi',
       logo: {
         '@type': 'ImageObject',
         url: `${baseUrl}/logo.png`,

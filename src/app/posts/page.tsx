@@ -4,32 +4,32 @@ import Breadcrumb from '@/components/Breadcrumb'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '技术文章列表 - Bi Blog | 前端后端全栈开发经验分享',
-  description: '浏览全部技术文章，涵盖前端开发、后端架构、全栈项目、编程技巧与独立开发经验分享',
+  title: '文章列表 | HaydenBi',
+  description: '浏览全部文章，涵盖前端开发、后端架构、全栈项目、编程技巧与独立开发经验分享',
   keywords: '技术博客, 前端开发, 后端开发, 全栈, 编程, 技术文章, 项目实践',
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: '技术文章列表 - Bi Blog | 前端后端全栈开发经验分享',
-    description: '浏览全部技术文章，涵盖前端开发、后端架构、全栈项目、编程技巧与独立开发经验分享',
+    title: '文章列表 | HaydenBi',
+    description: '浏览全部文章，涵盖前端开发、后端架构、全栈项目、编程技巧与独立开发经验分享',
     type: 'website',
     url: '/posts',
-    siteName: 'Bi Blog',
+    siteName: 'HaydenBi',
     locale: 'zh_CN',
     images: [
       {
         url: 'https://r2.haydenbi.com/logo/logo.png',
         width: 548,
         height: 698,
-        alt: 'Bi Blog - 技术文章列表',
+        alt: 'HaydenBi - 技术文章列表',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '技术文章列表 - Bi Blog | 前端后端全栈开发经验分享',
+    title: '文章列表 | HaydenBi',
     description: '浏览全部技术文章，涵盖前端开发、后端架构、全栈项目、编程技巧与独立开发经验分享',
     images: ['https://r2.haydenbi.com/logo/logo.png'],
   },
