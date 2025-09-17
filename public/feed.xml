@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
-        <title>Bi's Blog</title>
+        <title>HaydenBi Blog</title>
         <link>localhost:3000</link>
         <description>个人博客，分享技术与生活</description>
         <lastBuildDate>Wed, 17 Sep 2025 01:26:58 GMT</lastBuildDate>
@@ -9,7 +9,7 @@
         <generator>Next.js</generator>
         <language>zh-CN</language>
         <image>
-            <title>Bi's Blog</title>
+            <title>HaydenBi Blog</title>
             <url>localhost:3000/logo.png</url>
             <link>localhost:3000</link>
         </image>
