@@ -50,7 +50,7 @@ export default function Header() {
                 className="w-8 h-8"
               />
               <span className="text-xl font-bold text-foreground">
-                Blog
+                HaydenBi
               </span>
             </Link>
           </div>
