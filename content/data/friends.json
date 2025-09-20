@@ -32,6 +32,17 @@
       "tags": ["X", "Twitter", "视频", "下载"],
       "addedDate": "2025-08-28",
       "order": 1
+    },
+    {
+      "id": "5",
+      "name": "Pinterest视频下载工具",
+      "url": "https://pinterestool.com?utm_source=haydenbi.com&utm_medium=link&utm_campaign=friendlink",
+      "description": "Pinterest视频下载工具",
+      "avatar": "https://pinterestool.com/favicon.ico",
+      "status": "active",
+      "tags": ["Pinterest", "视频", "下载"],
+      "addedDate": "2025-09-20",
+      "order": 1
     }
   ],
   "statistics": {
