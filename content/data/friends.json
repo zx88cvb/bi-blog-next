@@ -9,7 +9,7 @@
       "status": "active",
       "tags": ["域名", "IP"],
       "addedDate": "2025-08-08",
-      "order": 3
+      "order": 10
     },
     {
       "id": "3",
@@ -20,7 +20,7 @@
       "status": "active",
       "tags": ["游戏"],
       "addedDate": "2025-08-21",
-      "order": 2
+      "order": 9
     },
     {
       "id": "4",
@@ -31,7 +31,7 @@
       "status": "active",
       "tags": ["X", "Twitter", "视频", "下载"],
       "addedDate": "2025-08-28",
-      "order": 1
+      "order": 7
     },
     {
       "id": "5",
@@ -42,7 +42,18 @@
       "status": "active",
       "tags": ["Pinterest", "视频", "下载"],
       "addedDate": "2025-09-20",
-      "order": 1
+      "order": 8
+    },
+    {
+      "id": "6",
+      "name": "龚东海的博客",
+      "url": "https://mgrowup.com?utm_source=haydenbi.com&utm_medium=link&utm_campaign=friendlink",
+      "description": "真诚记录，生活值得",
+      "avatar": "https://mgrowup.com/images/ava.png",
+      "status": "active",
+      "tags": ["博客"],
+      "addedDate": "2025-09-20",
+      "order": 6
     }
   ],
   "statistics": {
