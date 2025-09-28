@@ -11,6 +11,7 @@ export default function robots(): MetadataRoute.Robots {
         '/api/',
         '/_next/',
         '/private/',
+        '/cdn-cgi/'
       ],
     },
     sitemap: `${baseUrl}/sitemap.xml`,
