@@ -54,6 +54,17 @@
       "tags": ["博客"],
       "addedDate": "2025-09-20",
       "order": 6
+    },
+    {
+      "id": "7",
+      "name": "Bluesky视频下载工具",
+      "url": "https://bskytool.com?utm_source=haydenbi.com&utm_medium=link&utm_campaign=friendlink",
+      "description": "Bluesky视频下载工具",
+      "avatar": "https://bskytool.com/favicon.ico",
+      "status": "active",
+      "tags": ["Bluesky", "视频", "下载"],
+      "addedDate": "2025-10-27",
+      "order": 7
     }
   ],
   "statistics": {
