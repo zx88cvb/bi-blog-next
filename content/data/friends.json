@@ -7,7 +7,10 @@
       "description": "域名查询和ip定位",
       "avatar": "https://dhuqkmqv7zzml403.public.blob.vercel-storage.com/image/friends/domainsexplore.com.png",
       "status": "active",
-      "tags": ["域名", "IP"],
+      "tags": [
+        "域名",
+        "IP"
+      ],
       "addedDate": "2025-08-08",
       "order": 10
     },
@@ -18,7 +21,9 @@
       "description": "每日小游戏",
       "avatar": "https://dhuqkmqv7zzml403.public.blob.vercel-storage.com/image/friends/gamebeanplay_logo.png",
       "status": "active",
-      "tags": ["游戏"],
+      "tags": [
+        "游戏"
+      ],
       "addedDate": "2025-08-21",
       "order": 9
     },
@@ -29,7 +34,12 @@
       "description": "X(Twitter)视频下载工具",
       "avatar": "https://x-twitter-downloader.com/favicon.ico",
       "status": "active",
-      "tags": ["X", "Twitter", "视频", "下载"],
+      "tags": [
+        "X",
+        "Twitter",
+        "视频",
+        "下载"
+      ],
       "addedDate": "2025-08-28",
       "order": 7
     },
@@ -40,7 +50,11 @@
       "description": "Pinterest视频下载工具",
       "avatar": "https://pinterestool.com/favicon.ico",
       "status": "active",
-      "tags": ["Pinterest", "视频", "下载"],
+      "tags": [
+        "Pinterest",
+        "视频",
+        "下载"
+      ],
       "addedDate": "2025-09-20",
       "order": 8
     },
@@ -51,7 +65,9 @@
       "description": "真诚记录，生活值得",
       "avatar": "https://mgrowup.com/images/ava.png",
       "status": "active",
-      "tags": ["博客"],
+      "tags": [
+        "博客"
+      ],
       "addedDate": "2025-09-20",
       "order": 6
     },
@@ -62,9 +78,29 @@
       "description": "Bluesky视频下载工具",
       "avatar": "https://bskytool.com/favicon.ico",
       "status": "active",
-      "tags": ["Bluesky", "视频", "下载"],
+      "tags": [
+        "Bluesky",
+        "视频",
+        "下载"
+      ],
       "addedDate": "2025-10-27",
       "order": 7
+    },
+    {
+      "id": "8",
+      "name": "UrltoMedia",
+      "url": "https://urltomedia.com?utm_source=haydenbi.com&utm_medium=link&utm_campaign=friendlink",
+      "description": "任意URL生成截图或滚动视频",
+      "avatar": "https://urltomedia.com/favicon.ico",
+      "status": "active",
+      "tags": [
+        "URL",
+        "视频",
+        "截图",
+        "下载"
+      ],
+      "addedDate": "2025-11-26",
+      "order": 5
     }
   ],
   "statistics": {
