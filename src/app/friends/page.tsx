@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 
 export default function FriendsPage() {
   const { friends } = getFriendsData()
-  
+
   return (
     <div className="min-h-screen py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,7 +60,7 @@ export default function FriendsPage() {
             <Card key={friend.id} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <CardHeader className="pb-4">
                 <div className="flex items-start gap-4">
-                  <a 
+                  <a
                     href={friend.url}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -74,7 +74,7 @@ export default function FriendsPage() {
                     </Avatar>
                   </a>
                   <div className="flex-1 min-w-0">
-                    <a 
+                    <a
                       href={friend.url}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -86,7 +86,7 @@ export default function FriendsPage() {
                     </a>
                     {friend.tags && (
                       <div className="flex flex-wrap gap-1 mt-2">
-                        {friend.tags.slice(0, 2).map((tag, index) => (
+                        {friend.tags.map((tag, index) => (
                           <Badge key={index} variant="secondary" className="text-xs">
                             {tag}
                           </Badge>
